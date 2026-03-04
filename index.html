@@ -1,208 +1,415 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vedran Krivokuca — Senior Software Engineer</title>
-  <meta name="description" content="Personal portfolio of Vedran Krivokuca, Senior Software Engineer based in Zagreb, Croatia." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
-          },
-          colors: {
-            stone: {
-              50: '#fafaf9',
-              100: '#f5f5f4',
-              200: '#e7e5e4',
-              300: '#d6d3d1',
-              400: '#a8a29e',
-              500: '#78716c',
-              600: '#57534e',
-              700: '#44403c',
-              800: '#292524',
-              900: '#1c1917',
-            },
-          },
-          animation: {
-            pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-          },
-        },
-      },
-    }
-  </script>
-  <style>
-    html { font-family: 'Inter', sans-serif; }
-    .gradient-text {
-      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .glass {
-      background: rgba(250, 250, 249, 0.8);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -0.5625rem;
-      top: 0.375rem;
-      width: 1.125rem;
-      height: 1.125rem;
-      background: white;
-      border: 2px solid #4f46e5;
-      border-radius: 50%;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    .cursor { animation: blink 1s step-end infinite; }
-  </style>
-</head>
-<body class="bg-stone-50 text-stone-900 antialiased">
-
-  <!-- ============================================================
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vedran Krivokuca — Senior Software Engineer</title>
+        <meta
+            name="description"
+            content="Personal portfolio of Vedran Krivokuca, Senior Software Engineer based in Zagreb, Croatia."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ["Inter", "ui-sans-serif", "system-ui"],
+                            mono: [
+                                "JetBrains Mono",
+                                "ui-monospace",
+                                "monospace",
+                            ],
+                        },
+                        colors: {
+                            stone: {
+                                50: "#fafaf9",
+                                100: "#f5f5f4",
+                                200: "#e7e5e4",
+                                300: "#d6d3d1",
+                                400: "#a8a29e",
+                                500: "#78716c",
+                                600: "#57534e",
+                                700: "#44403c",
+                                800: "#292524",
+                                900: "#1c1917",
+                            },
+                        },
+                        animation: {
+                            pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            html {
+                font-family: "Inter", sans-serif;
+            }
+            .gradient-text {
+                background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .glass {
+                background: rgba(250, 250, 249, 0.8);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+            }
+            .timeline-item::before {
+                content: "";
+                position: absolute;
+                left: -0.5625rem;
+                top: 0.375rem;
+                width: 1.125rem;
+                height: 1.125rem;
+                background: white;
+                border: 2px solid #0284c7;
+                border-radius: 50%;
+            }
+            @keyframes blink {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0;
+                }
+            }
+            .cursor {
+                animation: blink 1s step-end infinite;
+            }
+            @keyframes social-highlight {
+                0% {
+                    color: #0284c7;
+                    transform: scale(1.25);
+                }
+                25% {
+                    color: inherit;
+                    transform: scale(1);
+                }
+                50% {
+                    color: #0284c7;
+                    transform: scale(1.25);
+                }
+                75% {
+                    color: inherit;
+                    transform: scale(1);
+                }
+                100% {
+                    color: #0284c7;
+                    transform: scale(1.25);
+                }
+            }
+            .social-blink a {
+                animation: social-highlight 0.9s ease-in-out forwards;
+            }
+        </style>
+    </head>
+    <body class="bg-stone-50 text-stone-900 antialiased">
+        <!-- ============================================================
        NAVBAR
   ============================================================ -->
-  <nav class="sticky top-0 z-50 glass border-b border-stone-100">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="text-xl font-bold tracking-tight">
-        VK<span class="text-indigo-600">.</span>
-      </a>
+        <nav class="sticky top-0 z-50 glass border-b border-stone-100">
+            <div
+                class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"
+            >
+                <!-- Logo -->
+                <a href="#" class="text-xl font-bold tracking-tight">
+                    VK<span class="text-amber-400">.</span>
+                </a>
 
-      <!-- Desktop links -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#about" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">About</a>
-        <a href="#skills" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Skills</a>
-        <a href="#projects" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Projects</a>
-        <a href="#experience" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Experience</a>
-        <a href="#contact" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Contact</a>
-      </div>
+                <!-- Desktop links -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a
+                        href="#about"
+                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        >About</a
+                    >
+                    <a
+                        href="#skills"
+                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        >Skills</a
+                    >
+                    <a
+                        href="#projects"
+                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        >Projects</a
+                    >
+                    <a
+                        href="#experience"
+                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        >Experience</a
+                    >
+                </div>
 
-      <!-- CTA -->
-      <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
-        Get in touch
-      </a>
+                <!-- CTA -->
+                <button
+                    onclick="highlightSocials()"
+                    class="hidden md:inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-stone-900 text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+                >
+                    Get in touch
+                </button>
 
-      <!-- Mobile menu button -->
-      <button id="menu-toggle" class="md:hidden p-2 rounded-md text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-colors" aria-label="Toggle menu">
-        <svg id="menu-open-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg id="menu-close-icon" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
+                <!-- Mobile menu button -->
+                <button
+                    id="menu-toggle"
+                    class="md:hidden p-2 rounded-md text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-colors"
+                    aria-label="Toggle menu"
+                >
+                    <svg
+                        id="menu-open-icon"
+                        class="w-5 h-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                    <svg
+                        id="menu-close-icon"
+                        class="w-5 h-5 hidden"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-stone-100">
-      <div class="px-6 py-4 flex flex-col gap-4">
-        <a href="#about" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors" onclick="closeMobileMenu()">About</a>
-        <a href="#skills" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors" onclick="closeMobileMenu()">Skills</a>
-        <a href="#projects" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors" onclick="closeMobileMenu()">Projects</a>
-        <a href="#experience" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors" onclick="closeMobileMenu()">Experience</a>
-        <a href="#contact" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors" onclick="closeMobileMenu()">Contact</a>
-        <a href="#contact" class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors" onclick="closeMobileMenu()">Get in touch</a>
-      </div>
-    </div>
-  </nav>
+            <!-- Mobile menu -->
+            <div
+                id="mobile-menu"
+                class="hidden md:hidden border-t border-stone-100"
+            >
+                <div class="px-6 py-4 flex flex-col gap-4">
+                    <a
+                        href="#about"
+                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        onclick="closeMobileMenu()"
+                        >About</a
+                    >
+                    <a
+                        href="#skills"
+                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        onclick="closeMobileMenu()"
+                        >Skills</a
+                    >
+                    <a
+                        href="#projects"
+                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        onclick="closeMobileMenu()"
+                        >Projects</a
+                    >
+                    <a
+                        href="#experience"
+                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        onclick="closeMobileMenu()"
+                        >Experience</a
+                    >
+                    <button
+                        onclick="closeMobileMenu(); highlightSocials()"
+                        class="inline-flex items-center justify-center bg-amber-400 hover:bg-amber-500 text-stone-900 text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+                    >
+                        Get in touch
+                    </button>
+                </div>
+            </div>
+        </nav>
 
-  <!-- ============================================================
+        <!-- ============================================================
        HERO
   ============================================================ -->
-  <section class="min-h-[calc(100vh-4rem)] flex items-center">
-    <div class="max-w-6xl mx-auto px-6 py-20 w-full">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <section class="min-h-[calc(100vh-4rem)] flex items-center">
+            <div class="max-w-6xl mx-auto px-6 py-20 w-full">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Left col -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Available badge -->
+                        <div
+                            class="inline-flex items-center gap-2 bg-sky-50 text-sky-700 text-xs font-medium px-3 py-1.5 rounded-full border border-sky-200 w-fit"
+                        >
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+                                ></span>
+                                <span
+                                    class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"
+                                ></span>
+                            </span>
+                            Current status: happy camper; teaching robots how to
+                            tie knots
+                        </div>
 
-        <!-- Left col -->
-        <div class="flex flex-col gap-6">
-          <!-- Available badge -->
-          <div class="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full border border-emerald-200 w-fit">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            Available for new opportunities
-          </div>
+                        <!-- Heading -->
+                        <div>
+                            <h1
+                                class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight"
+                            >
+                                Hi, I'm <span class="gradient-text">Vedran</span
+                                ><br />Krivokuca.
+                            </h1>
+                            <p class="mt-3 text-xl font-medium text-stone-500">
+                                Senior Software Engineer
+                            </p>
+                        </div>
 
-          <!-- Heading -->
-          <div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-              Hi, I'm <span class="gradient-text">Vedran</span><br />Krivokuca.
-            </h1>
-            <p class="mt-3 text-xl font-medium text-stone-500">Senior Software Engineer</p>
-          </div>
+                        <!-- Blurb -->
+                        <p class="text-stone-500 leading-relaxed max-w-lg">
+                            I build scalable, user-centric web applications with
+                            modern TypeScript and cloud-native architectures.
+                            Passionate about clean code, developer experience,
+                            and turning complex problems into elegant solutions.
+                        </p>
 
-          <!-- Blurb -->
-          <p class="text-stone-500 leading-relaxed max-w-lg">
-            I build scalable, user-centric web applications with modern TypeScript and cloud-native architectures. Passionate about clean code, developer experience, and turning complex problems into elegant solutions.
-          </p>
+                        <!-- CTA buttons -->
+                        <div class="flex flex-wrap gap-3">
+                            <a
+                                href="#projects"
+                                class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-stone-900 font-medium px-5 py-2.5 rounded-lg transition-colors text-sm"
+                            >
+                                View my work
+                                <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                href="/resume.pdf"
+                                class="inline-flex items-center gap-2 bg-white hover:bg-stone-50 text-stone-700 font-medium px-5 py-2.5 rounded-lg border border-stone-200 transition-colors text-sm"
+                            >
+                                Download CV
+                                <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
 
-          <!-- CTA buttons -->
-          <div class="flex flex-wrap gap-3">
-            <a href="#projects" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2.5 rounded-lg transition-colors text-sm">
-              View my work
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-            <a href="/resume.pdf" class="inline-flex items-center gap-2 bg-white hover:bg-stone-50 text-stone-700 font-medium px-5 py-2.5 rounded-lg border border-stone-200 transition-colors text-sm">
-              Download CV
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-            </a>
-          </div>
+                        <!-- Social icons -->
+                        <div
+                            id="social-icons"
+                            class="flex items-center gap-4 pt-2"
+                        >
+                            <a
+                                href="https://github.com/vedran-krivokuca"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="GitHub"
+                                class="text-stone-400 hover:text-stone-900 transition-colors"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                href="https://linkedin.com/in/vedran-krivokuca"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="LinkedIn"
+                                class="text-stone-400 hover:text-stone-900 transition-colors"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                href="https://twitter.com/vedran_k"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Twitter / X"
+                                class="text-stone-400 hover:text-stone-900 transition-colors"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                href="mailto:vedran@krivokuca.dev"
+                                aria-label="Email"
+                                class="text-stone-400 hover:text-stone-900 transition-colors"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
 
-          <!-- Social icons -->
-          <div class="flex items-center gap-4 pt-2">
-            <a href="https://github.com/vedran-krivokuca" target="_blank" rel="noopener" aria-label="GitHub" class="text-stone-400 hover:text-stone-900 transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-              </svg>
-            </a>
-            <a href="https://linkedin.com/in/vedran-krivokuca" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-stone-400 hover:text-stone-900 transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </a>
-            <a href="https://twitter.com/vedran_k" target="_blank" rel="noopener" aria-label="Twitter / X" class="text-stone-400 hover:text-stone-900 transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </a>
-            <a href="mailto:vedran@krivokuca.dev" aria-label="Email" class="text-stone-400 hover:text-stone-900 transition-colors">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right col — Terminal card -->
-        <div class="hidden lg:block">
-          <div class="bg-stone-900 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-stone-700/50">
-            <!-- Terminal chrome -->
-            <div class="flex items-center gap-2 px-4 py-3 border-b border-stone-700/60">
-              <span class="w-3 h-3 rounded-full bg-red-500"></span>
-              <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-              <span class="w-3 h-3 rounded-full bg-green-500"></span>
-              <span class="ml-3 text-stone-500 text-xs font-mono">dev-info.ts</span>
-            </div>
-            <!-- Code content -->
-            <pre class="font-mono text-sm leading-relaxed p-6 text-stone-300 overflow-x-auto"><code><span class="text-violet-400">const</span> <span class="text-sky-300">developer</span> <span class="text-stone-400">=</span> <span class="text-yellow-300">{</span>
+                    <!-- Right col — Terminal card -->
+                    <div class="hidden lg:block">
+                        <div
+                            class="bg-stone-900 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-stone-700/50"
+                        >
+                            <pre
+                                class="font-mono text-sm leading-relaxed p-6 text-stone-300 overflow-x-auto"
+                            ><code><span class="text-violet-400">const</span> <span class="text-sky-300">developer</span> <span class="text-stone-400">=</span> <span class="text-yellow-300">{</span>
   <span class="text-sky-300">name</span><span class="text-stone-400">:</span>     <span class="text-emerald-400">"Vedran Krivokuca"</span><span class="text-stone-400">,</span>
   <span class="text-sky-300">role</span><span class="text-stone-400">:</span>     <span class="text-emerald-400">"Senior Software Engineer"</span><span class="text-stone-400">,</span>
   <span class="text-sky-300">location</span><span class="text-stone-400">:</span> <span class="text-emerald-400">"Zagreb, Croatia"</span><span class="text-stone-400">,</span>
@@ -215,581 +422,986 @@
   <span class="text-yellow-300">]</span><span class="text-stone-400">,</span>
 
   <span class="text-sky-300">currentFocus</span><span class="text-stone-400">:</span> <span class="text-emerald-400">"Cloud-native apps"</span><span class="text-stone-400">,</span>
-  <span class="text-sky-300">available</span><span class="text-stone-400">:</span>    <span class="text-orange-400">true</span><span class="text-stone-400">,</span>
+  <span class="text-sky-300">available</span><span class="text-stone-400">:</span>    <span class="text-orange-400">?false</span><span class="text-stone-400">,</span>
 <span class="text-yellow-300">}</span><span class="text-stone-400">;</span>
 
 <span class="text-stone-600">// Ready to build something great? 🚀</span>
 <span class="text-violet-400">export default</span> <span class="text-sky-300">developer</span><span class="text-stone-400">;</span>
 <span class="cursor text-stone-400">▋</span></code></pre>
-          </div>
-        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
+        <!-- ============================================================
        ABOUT
   ============================================================ -->
-  <section id="about" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <!-- Section header -->
-      <div class="mb-16">
-        <p class="text-indigo-600 text-sm font-semibold tracking-widest uppercase mb-3">About me</p>
-        <h2 class="text-3xl sm:text-4xl font-bold">A bit about myself</h2>
-      </div>
+        <section id="about" class="py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <!-- Section header -->
+                <div class="mb-16">
+                    <p
+                        class="text-sky-600 text-sm font-semibold tracking-widest uppercase mb-3"
+                    >
+                        About me
+                    </p>
+                    <h2 class="text-3xl sm:text-4xl font-bold">
+                        A bit about myself
+                    </h2>
+                </div>
 
-      <div class="grid lg:grid-cols-2 gap-16 items-start">
-        <!-- Bio -->
-        <div class="flex flex-col gap-5 text-stone-500 leading-relaxed">
-          <p>
-            I'm a Senior Software Engineer with over five years of professional experience designing and shipping full-stack web applications. My journey started with a deep curiosity for how things work on the web, which quickly evolved into a passion for building clean, performant, and maintainable systems.
-          </p>
-          <p>
-            I thrive at the intersection of product thinking and engineering craft — whether that means architecting a real-time collaborative platform, optimising database queries for sub-50ms response times, or mentoring junior developers through code review. I believe great software is a team sport and that writing code is an act of communication.
-          </p>
-          <p>
-            Outside of work I contribute to open-source projects, explore new frameworks, speak at local meetups, and occasionally write about software design on my blog. When I'm not behind a keyboard you'll find me hiking the Croatian coast or experimenting with sourdough bread.
-          </p>
-          <div class="pt-2">
-            <a href="#contact" class="inline-flex items-center gap-2 text-indigo-600 font-medium text-sm hover:text-indigo-700 transition-colors">
-              Let's work together
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-        </div>
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <!-- Bio -->
+                    <div
+                        class="flex flex-col gap-5 text-stone-500 leading-relaxed"
+                    >
+                        <p>
+                            I'm a Senior Software Engineer with over five years
+                            of professional experience designing and shipping
+                            full-stack web applications. My journey started with
+                            a deep curiosity for how things work on the web,
+                            which quickly evolved into a passion for building
+                            clean, performant, and maintainable systems.
+                        </p>
+                        <p>
+                            I thrive at the intersection of product thinking and
+                            engineering craft — whether that means architecting
+                            a real-time collaborative platform, optimising
+                            database queries for sub-50ms response times, or
+                            mentoring junior developers through code review. I
+                            believe great software is a team sport and that
+                            writing code is an act of communication.
+                        </p>
+                        <p>
+                            Outside of work I contribute to open-source
+                            projects, explore new frameworks, speak at local
+                            meetups, and occasionally write about software
+                            design on my blog. When I'm not behind a keyboard
+                            you'll find me hiking the Croatian coast or
+                            experimenting with sourdough bread.
+                        </p>
+                    </div>
 
-        <!-- Stat cards -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-stone-50 rounded-xl p-6 border border-stone-100">
-            <p class="text-3xl font-bold gradient-text">5+</p>
-            <p class="text-stone-500 text-sm mt-1 font-medium">Years of experience</p>
-          </div>
-          <div class="bg-stone-50 rounded-xl p-6 border border-stone-100">
-            <p class="text-3xl font-bold gradient-text">30+</p>
-            <p class="text-stone-500 text-sm mt-1 font-medium">Projects delivered</p>
-          </div>
-          <div class="bg-stone-50 rounded-xl p-6 border border-stone-100">
-            <p class="text-3xl font-bold gradient-text">10+</p>
-            <p class="text-stone-500 text-sm mt-1 font-medium">Open source contributions</p>
-          </div>
-          <div class="bg-stone-50 rounded-xl p-6 border border-stone-100">
-            <p class="text-3xl font-bold gradient-text">3</p>
-            <p class="text-stone-500 text-sm mt-1 font-medium">Countries worked in</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <!-- Stat cards -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="bg-stone-50 rounded-xl p-6 border border-stone-100"
+                        >
+                            <p class="text-3xl font-bold gradient-text">5+</p>
+                            <p class="text-stone-500 text-sm mt-1 font-medium">
+                                Years of experience
+                            </p>
+                        </div>
+                        <div
+                            class="bg-stone-50 rounded-xl p-6 border border-stone-100"
+                        >
+                            <p class="text-3xl font-bold gradient-text">30+</p>
+                            <p class="text-stone-500 text-sm mt-1 font-medium">
+                                Projects delivered
+                            </p>
+                        </div>
+                        <div
+                            class="bg-stone-50 rounded-xl p-6 border border-stone-100"
+                        >
+                            <p class="text-3xl font-bold gradient-text">10+</p>
+                            <p class="text-stone-500 text-sm mt-1 font-medium">
+                                Open source contributions
+                            </p>
+                        </div>
+                        <div
+                            class="bg-stone-50 rounded-xl p-6 border border-stone-100"
+                        >
+                            <p class="text-3xl font-bold gradient-text">3</p>
+                            <p class="text-stone-500 text-sm mt-1 font-medium">
+                                Countries worked in
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- ============================================================
+        <!-- ============================================================
        SKILLS
   ============================================================ -->
-  <section id="skills" class="py-24 bg-stone-50">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="mb-16">
-        <p class="text-indigo-600 text-sm font-semibold tracking-widest uppercase mb-3">Skills</p>
-        <h2 class="text-3xl sm:text-4xl font-bold">Technologies I work with</h2>
-      </div>
+        <section id="skills" class="py-24 bg-stone-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="mb-16">
+                    <p
+                        class="text-sky-600 text-sm font-semibold tracking-widest uppercase mb-3"
+                    >
+                        Skills
+                    </p>
+                    <h2 class="text-3xl sm:text-4xl font-bold">
+                        Technologies I work with
+                    </h2>
+                </div>
 
-      <div class="flex flex-col gap-10">
+                <div class="flex flex-col gap-10">
+                    <!-- Languages -->
+                    <div>
+                        <p
+                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                        >
+                            Languages
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >TypeScript</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >JavaScript</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Python</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Go</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >SQL</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Bash</span
+                            >
+                        </div>
+                    </div>
 
-        <!-- Languages -->
-        <div>
-          <p class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3">Languages</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">TypeScript</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">JavaScript</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Python</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Go</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">SQL</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Bash</span>
-          </div>
-        </div>
+                    <!-- Frontend -->
+                    <div>
+                        <p
+                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                        >
+                            Frontend
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >React</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Next.js</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Tailwind CSS</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Vite</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Zustand</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >React Query</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Framer Motion</span
+                            >
+                        </div>
+                    </div>
 
-        <!-- Frontend -->
-        <div>
-          <p class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3">Frontend</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">React</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Next.js</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Tailwind CSS</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Vite</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Zustand</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">React Query</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Framer Motion</span>
-          </div>
-        </div>
+                    <!-- Backend -->
+                    <div>
+                        <p
+                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                        >
+                            Backend
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Node.js</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Express</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Fastify</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >tRPC</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >GraphQL</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >REST APIs</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >WebSockets</span
+                            >
+                        </div>
+                    </div>
 
-        <!-- Backend -->
-        <div>
-          <p class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3">Backend</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Node.js</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Express</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Fastify</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">tRPC</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">GraphQL</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">REST APIs</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">WebSockets</span>
-          </div>
-        </div>
+                    <!-- Database -->
+                    <div>
+                        <p
+                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                        >
+                            Database
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >PostgreSQL</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >MongoDB</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Redis</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >SQLite</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Prisma ORM</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Drizzle ORM</span
+                            >
+                        </div>
+                    </div>
 
-        <!-- Database -->
-        <div>
-          <p class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3">Database</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">PostgreSQL</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">MongoDB</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Redis</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">SQLite</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Prisma ORM</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Drizzle ORM</span>
-          </div>
-        </div>
+                    <!-- DevOps -->
+                    <div>
+                        <p
+                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                        >
+                            DevOps
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >AWS</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Docker</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >GitHub Actions</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Kubernetes</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Terraform</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Nginx</span
+                            >
+                        </div>
+                    </div>
 
-        <!-- DevOps -->
-        <div>
-          <p class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3">DevOps</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">AWS</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Docker</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">GitHub Actions</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Kubernetes</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Terraform</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Nginx</span>
-          </div>
-        </div>
+                    <!-- Tools -->
+                    <div>
+                        <p
+                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                        >
+                            Tools
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Git</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >VS Code</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Figma</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Linear</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Postman</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Datadog</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Sentry</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Tools -->
-        <div>
-          <p class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3">Tools</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Git</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">VS Code</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Figma</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Linear</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Postman</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Datadog</span>
-            <span class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium">Sentry</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
+        <!-- ============================================================
        PROJECTS
   ============================================================ -->
-  <section id="projects" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="mb-16">
-        <p class="text-indigo-600 text-sm font-semibold tracking-widest uppercase mb-3">Projects</p>
-        <h2 class="text-3xl sm:text-4xl font-bold">Selected work</h2>
-      </div>
+        <section id="projects" class="py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="mb-16">
+                    <p
+                        class="text-sky-600 text-sm font-semibold tracking-widest uppercase mb-3"
+                    >
+                        Projects
+                    </p>
+                    <h2 class="text-3xl sm:text-4xl font-bold">
+                        Selected work
+                    </h2>
+                </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1: CloudSync -->
+                    <article
+                        class="bg-stone-50 border border-stone-100 rounded-2xl p-6 flex flex-col gap-4 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                    >
+                        <div class="flex items-start justify-between">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-5 h-5 text-sky-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a
+                                    href="https://github.com/vedran-krivokuca/cloudsync"
+                                    target="_blank"
+                                    rel="noopener"
+                                    aria-label="GitHub"
+                                    class="text-stone-400 hover:text-stone-700 transition-colors"
+                                >
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="#"
+                                    aria-label="Live demo"
+                                    class="text-stone-400 hover:text-stone-700 transition-colors"
+                                >
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-stone-900">
+                                CloudSync
+                            </h3>
+                            <p
+                                class="text-stone-500 text-sm mt-1.5 leading-relaxed"
+                            >
+                                Real-time collaborative platform enabling teams
+                                to co-edit documents with conflict-free merges
+                                and presence awareness.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-auto">
+                            <span
+                                class="text-xs font-medium bg-sky-50 text-sky-700 rounded-full px-2.5 py-0.5"
+                                >TypeScript</span
+                            >
+                            <span
+                                class="text-xs font-medium bg-sky-50 text-sky-700 rounded-full px-2.5 py-0.5"
+                                >React</span
+                            >
+                            <span
+                                class="text-xs font-medium bg-sky-50 text-sky-700 rounded-full px-2.5 py-0.5"
+                                >WebSockets</span
+                            >
+                            <span
+                                class="text-xs font-medium bg-sky-50 text-sky-700 rounded-full px-2.5 py-0.5"
+                                >Redis</span
+                            >
+                        </div>
+                    </article>
 
-        <!-- Card 1: CloudSync -->
-        <article class="bg-stone-50 border border-stone-100 rounded-2xl p-6 flex flex-col gap-4 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center">
-              <svg class="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-              </svg>
+                    <!-- Card 2: DevMetrics -->
+                    <article
+                        class="bg-stone-50 border border-stone-100 rounded-2xl p-6 flex flex-col gap-4 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                    >
+                        <div class="flex items-start justify-between">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-5 h-5 text-violet-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a
+                                    href="https://github.com/vedran-krivokuca/devmetrics"
+                                    target="_blank"
+                                    rel="noopener"
+                                    aria-label="GitHub"
+                                    class="text-stone-400 hover:text-stone-700 transition-colors"
+                                >
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="#"
+                                    aria-label="Live demo"
+                                    class="text-stone-400 hover:text-stone-700 transition-colors"
+                                >
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-stone-900">
+                                DevMetrics
+                            </h3>
+                            <p
+                                class="text-stone-500 text-sm mt-1.5 leading-relaxed"
+                            >
+                                Developer productivity dashboard surfacing DORA
+                                metrics, PR cycle times, and deployment
+                                frequency across GitHub repos.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-auto">
+                            <span
+                                class="text-xs font-medium bg-violet-50 text-violet-700 rounded-full px-2.5 py-0.5"
+                                >Next.js</span
+                            >
+                            <span
+                                class="text-xs font-medium bg-violet-50 text-violet-700 rounded-full px-2.5 py-0.5"
+                                >PostgreSQL</span
+                            >
+                            <span
+                                class="text-xs font-medium bg-violet-50 text-violet-700 rounded-full px-2.5 py-0.5"
+                                >Chart.js</span
+                            >
+                            <span
+                                class="text-xs font-medium bg-violet-50 text-violet-700 rounded-full px-2.5 py-0.5"
+                                >Prisma</span
+                            >
+                        </div>
+                    </article>
+
+                    <!-- Card 3: ShopCraft -->
+                    <article
+                        class="bg-stone-50 border border-stone-100 rounded-2xl p-6 flex flex-col gap-4 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                    >
+                        <div class="flex items-start justify-between">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-5 h-5 text-emerald-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a
+                                    href="https://github.com/vedran-krivokuca/shopcraft"
+                                    target="_blank"
+                                    rel="noopener"
+                                    aria-label="GitHub"
+                                    class="text-stone-400 hover:text-stone-700 transition-colors"
+                                >
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="#"
+                                    aria-label="Live demo"
+                                    class="text-stone-400 hover:text-stone-700 transition-colors"
+                                >
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-stone-900">
+                                ShopCraft
+                            </h3>
+                            <p
+                                class="text-stone-500 text-sm mt-1.5 leading-relaxed"
+                            >
+                                Full-featured e-commerce platform with Stripe
+                                payments, inventory management, and an admin
+                                dashboard built for scale.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-auto">
+                            <span
+                                class="text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full px-2.5 py-0.5"
+                                >Node.js</span
+                            >
+                            <span
+                                class="text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full px-2.5 py-0.5"
+                                >Stripe</span
+                            >
+                            <span
+                                class="text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full px-2.5 py-0.5"
+                                >MongoDB</span
+                            >
+                            <span
+                                class="text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full px-2.5 py-0.5"
+                                >React</span
+                            >
+                        </div>
+                    </article>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <a
+                        href="https://github.com/vedran-krivokuca"
+                        target="_blank"
+                        rel="noopener"
+                        class="inline-flex items-center gap-2 text-stone-600 hover:text-stone-900 font-medium text-sm transition-colors border border-stone-200 rounded-lg px-5 py-2.5 hover:border-stone-300 bg-white"
+                    >
+                        View all projects on GitHub
+                        <svg
+                            class="w-4 h-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <div class="flex items-center gap-2">
-              <a href="https://github.com/vedran-krivokuca/cloudsync" target="_blank" rel="noopener" aria-label="GitHub" class="text-stone-400 hover:text-stone-700 transition-colors">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                </svg>
-              </a>
-              <a href="#" aria-label="Live demo" class="text-stone-400 hover:text-stone-700 transition-colors">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div>
-            <h3 class="font-bold text-lg text-stone-900">CloudSync</h3>
-            <p class="text-stone-500 text-sm mt-1.5 leading-relaxed">Real-time collaborative platform enabling teams to co-edit documents with conflict-free merges and presence awareness.</p>
-          </div>
-          <div class="flex flex-wrap gap-1.5 mt-auto">
-            <span class="text-xs font-medium bg-indigo-50 text-indigo-700 rounded-full px-2.5 py-0.5">TypeScript</span>
-            <span class="text-xs font-medium bg-indigo-50 text-indigo-700 rounded-full px-2.5 py-0.5">React</span>
-            <span class="text-xs font-medium bg-indigo-50 text-indigo-700 rounded-full px-2.5 py-0.5">WebSockets</span>
-            <span class="text-xs font-medium bg-indigo-50 text-indigo-700 rounded-full px-2.5 py-0.5">Redis</span>
-          </div>
-        </article>
+        </section>
 
-        <!-- Card 2: DevMetrics -->
-        <article class="bg-stone-50 border border-stone-100 rounded-2xl p-6 flex flex-col gap-4 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center">
-              <svg class="w-5 h-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-            </div>
-            <div class="flex items-center gap-2">
-              <a href="https://github.com/vedran-krivokuca/devmetrics" target="_blank" rel="noopener" aria-label="GitHub" class="text-stone-400 hover:text-stone-700 transition-colors">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                </svg>
-              </a>
-              <a href="#" aria-label="Live demo" class="text-stone-400 hover:text-stone-700 transition-colors">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div>
-            <h3 class="font-bold text-lg text-stone-900">DevMetrics</h3>
-            <p class="text-stone-500 text-sm mt-1.5 leading-relaxed">Developer productivity dashboard surfacing DORA metrics, PR cycle times, and deployment frequency across GitHub repos.</p>
-          </div>
-          <div class="flex flex-wrap gap-1.5 mt-auto">
-            <span class="text-xs font-medium bg-violet-50 text-violet-700 rounded-full px-2.5 py-0.5">Next.js</span>
-            <span class="text-xs font-medium bg-violet-50 text-violet-700 rounded-full px-2.5 py-0.5">PostgreSQL</span>
-            <span class="text-xs font-medium bg-violet-50 text-violet-700 rounded-full px-2.5 py-0.5">Chart.js</span>
-            <span class="text-xs font-medium bg-violet-50 text-violet-700 rounded-full px-2.5 py-0.5">Prisma</span>
-          </div>
-        </article>
-
-        <!-- Card 3: ShopCraft -->
-        <article class="bg-stone-50 border border-stone-100 rounded-2xl p-6 flex flex-col gap-4 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
-              <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-            </div>
-            <div class="flex items-center gap-2">
-              <a href="https://github.com/vedran-krivokuca/shopcraft" target="_blank" rel="noopener" aria-label="GitHub" class="text-stone-400 hover:text-stone-700 transition-colors">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                </svg>
-              </a>
-              <a href="#" aria-label="Live demo" class="text-stone-400 hover:text-stone-700 transition-colors">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div>
-            <h3 class="font-bold text-lg text-stone-900">ShopCraft</h3>
-            <p class="text-stone-500 text-sm mt-1.5 leading-relaxed">Full-featured e-commerce platform with Stripe payments, inventory management, and an admin dashboard built for scale.</p>
-          </div>
-          <div class="flex flex-wrap gap-1.5 mt-auto">
-            <span class="text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full px-2.5 py-0.5">Node.js</span>
-            <span class="text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full px-2.5 py-0.5">Stripe</span>
-            <span class="text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full px-2.5 py-0.5">MongoDB</span>
-            <span class="text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full px-2.5 py-0.5">React</span>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="mt-10 text-center">
-        <a href="https://github.com/vedran-krivokuca" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-stone-600 hover:text-stone-900 font-medium text-sm transition-colors border border-stone-200 rounded-lg px-5 py-2.5 hover:border-stone-300 bg-white">
-          View all projects on GitHub
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
+        <!-- ============================================================
        EXPERIENCE
   ============================================================ -->
-  <section id="experience" class="py-24 bg-stone-50">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="mb-16">
-        <p class="text-indigo-600 text-sm font-semibold tracking-widest uppercase mb-3">Experience</p>
-        <h2 class="text-3xl sm:text-4xl font-bold">Where I've worked</h2>
-      </div>
+        <section id="experience" class="py-24 bg-stone-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="mb-16">
+                    <p
+                        class="text-sky-600 text-sm font-semibold tracking-widest uppercase mb-3"
+                    >
+                        Experience
+                    </p>
+                    <h2 class="text-3xl sm:text-4xl font-bold">
+                        Where I've worked
+                    </h2>
+                </div>
 
-      <div class="max-w-2xl">
-        <div class="border-l-2 border-stone-200 ml-2 flex flex-col gap-10">
+                <div class="max-w-2xl">
+                    <div
+                        class="border-l-2 border-stone-200 ml-2 flex flex-col gap-10"
+                    >
+                        <!-- Job 1 -->
+                        <div class="relative pl-8 timeline-item">
+                            <div
+                                class="flex flex-wrap items-center justify-between gap-2 mb-1"
+                            >
+                                <h3 class="font-bold text-lg text-stone-900">
+                                    Senior Software Engineer
+                                </h3>
+                                <span
+                                    class="text-xs font-semibold text-sky-600 bg-sky-50 rounded-full px-3 py-1"
+                                    >2022 — Present</span
+                                >
+                            </div>
+                            <p class="text-sky-600 font-medium text-sm mb-3">
+                                TechForward
+                            </p>
+                            <p class="text-stone-500 text-sm leading-relaxed">
+                                Lead engineering on the core platform team,
+                                owning the real-time collaboration engine and
+                                API gateway. Reduced p99 latency by 60%,
+                                mentored 4 junior engineers, and drove adoption
+                                of TypeScript across the codebase.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mt-3">
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >TypeScript</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >React</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >Node.js</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >AWS</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >Kubernetes</span
+                                >
+                            </div>
+                        </div>
 
-          <!-- Job 1 -->
-          <div class="relative pl-8 timeline-item">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-              <h3 class="font-bold text-lg text-stone-900">Senior Software Engineer</h3>
-              <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 rounded-full px-3 py-1">2022 — Present</span>
+                        <!-- Job 2 -->
+                        <div class="relative pl-8 timeline-item">
+                            <div
+                                class="flex flex-wrap items-center justify-between gap-2 mb-1"
+                            >
+                                <h3 class="font-bold text-lg text-stone-900">
+                                    Software Engineer
+                                </h3>
+                                <span
+                                    class="text-xs font-semibold text-sky-600 bg-sky-50 rounded-full px-3 py-1"
+                                    >2020 — 2022</span
+                                >
+                            </div>
+                            <p class="text-sky-600 font-medium text-sm mb-3">
+                                NovaSoft d.o.o.
+                            </p>
+                            <p class="text-stone-500 text-sm leading-relaxed">
+                                Built and maintained SaaS products for
+                                enterprise clients in the logistics and finance
+                                sectors. Implemented event-driven microservices
+                                with RabbitMQ and delivered a white-label
+                                dashboard used by 50k+ users.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mt-3">
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >Node.js</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >Vue.js</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >PostgreSQL</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >RabbitMQ</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >Docker</span
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Job 3 -->
+                        <div class="relative pl-8 timeline-item">
+                            <div
+                                class="flex flex-wrap items-center justify-between gap-2 mb-1"
+                            >
+                                <h3 class="font-bold text-lg text-stone-900">
+                                    Junior Frontend Developer
+                                </h3>
+                                <span
+                                    class="text-xs font-semibold text-sky-600 bg-sky-50 rounded-full px-3 py-1"
+                                    >2018 — 2020</span
+                                >
+                            </div>
+                            <p class="text-sky-600 font-medium text-sm mb-3">
+                                PixelCraft Agency
+                            </p>
+                            <p class="text-stone-500 text-sm leading-relaxed">
+                                Developed responsive marketing websites and web
+                                apps for local and international clients.
+                                Focused on pixel-perfect implementation from
+                                Figma designs and improving Core Web Vitals
+                                scores.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mt-3">
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >JavaScript</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >React</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >Sass</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >WordPress</span
+                                >
+                                <span
+                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    >Figma</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="text-indigo-600 font-medium text-sm mb-3">TechForward</p>
-            <p class="text-stone-500 text-sm leading-relaxed">
-              Lead engineering on the core platform team, owning the real-time collaboration engine and API gateway. Reduced p99 latency by 60%, mentored 4 junior engineers, and drove adoption of TypeScript across the codebase.
-            </p>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">TypeScript</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">React</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">Node.js</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">AWS</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">Kubernetes</span>
-            </div>
-          </div>
+        </section>
 
-          <!-- Job 2 -->
-          <div class="relative pl-8 timeline-item">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-              <h3 class="font-bold text-lg text-stone-900">Software Engineer</h3>
-              <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 rounded-full px-3 py-1">2020 — 2022</span>
-            </div>
-            <p class="text-indigo-600 font-medium text-sm mb-3">NovaSoft d.o.o.</p>
-            <p class="text-stone-500 text-sm leading-relaxed">
-              Built and maintained SaaS products for enterprise clients in the logistics and finance sectors. Implemented event-driven microservices with RabbitMQ and delivered a white-label dashboard used by 50k+ users.
-            </p>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">Node.js</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">Vue.js</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">PostgreSQL</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">RabbitMQ</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">Docker</span>
-            </div>
-          </div>
-
-          <!-- Job 3 -->
-          <div class="relative pl-8 timeline-item">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-              <h3 class="font-bold text-lg text-stone-900">Junior Frontend Developer</h3>
-              <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 rounded-full px-3 py-1">2018 — 2020</span>
-            </div>
-            <p class="text-indigo-600 font-medium text-sm mb-3">PixelCraft Agency</p>
-            <p class="text-stone-500 text-sm leading-relaxed">
-              Developed responsive marketing websites and web apps for local and international clients. Focused on pixel-perfect implementation from Figma designs and improving Core Web Vitals scores.
-            </p>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">JavaScript</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">React</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">Sass</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">WordPress</span>
-              <span class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5">Figma</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CONTACT
-  ============================================================ -->
-  <section id="contact" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="mb-16">
-        <p class="text-indigo-600 text-sm font-semibold tracking-widest uppercase mb-3">Contact</p>
-        <h2 class="text-3xl sm:text-4xl font-bold">Let's work together</h2>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-16">
-
-        <!-- Left: Info -->
-        <div class="flex flex-col gap-8">
-          <p class="text-stone-500 leading-relaxed">
-            I'm currently open to senior engineering roles and interesting consulting projects. If you have something in mind — whether it's a product idea, a technical challenge, or just a conversation — I'd love to hear from you.
-          </p>
-
-          <div class="flex flex-col gap-5">
-            <!-- Email -->
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs text-stone-400 font-medium uppercase tracking-wider mb-0.5">Email</p>
-                <a href="mailto:vedran@krivokuca.dev" class="text-stone-700 hover:text-indigo-600 transition-colors font-medium text-sm">vedran@krivokuca.dev</a>
-              </div>
-            </div>
-
-            <!-- Location -->
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs text-stone-400 font-medium uppercase tracking-wider mb-0.5">Location</p>
-                <p class="text-stone-700 font-medium text-sm">Zagreb, Croatia</p>
-              </div>
-            </div>
-
-            <!-- GitHub -->
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs text-stone-400 font-medium uppercase tracking-wider mb-0.5">GitHub</p>
-                <a href="https://github.com/vedran-krivokuca" target="_blank" rel="noopener" class="text-stone-700 hover:text-indigo-600 transition-colors font-medium text-sm">github.com/vedran-krivokuca</a>
-              </div>
-            </div>
-
-            <!-- LinkedIn -->
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs text-stone-400 font-medium uppercase tracking-wider mb-0.5">LinkedIn</p>
-                <a href="https://linkedin.com/in/vedran-krivokuca" target="_blank" rel="noopener" class="text-stone-700 hover:text-indigo-600 transition-colors font-medium text-sm">linkedin.com/in/vedran-krivokuca</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Form -->
-        <form class="flex flex-col gap-5" onsubmit="handleSubmit(event)">
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div class="flex flex-col gap-1.5">
-              <label for="name" class="text-sm font-medium text-stone-700">Name</label>
-              <input
-                id="name"
-                type="text"
-                placeholder="John Doe"
-                class="w-full border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-              />
-            </div>
-            <div class="flex flex-col gap-1.5">
-              <label for="email" class="text-sm font-medium text-stone-700">Email</label>
-              <input
-                id="email"
-                type="email"
-                placeholder="john@example.com"
-                class="w-full border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-              />
-            </div>
-          </div>
-          <div class="flex flex-col gap-1.5">
-            <label for="subject" class="text-sm font-medium text-stone-700">Subject</label>
-            <input
-              id="subject"
-              type="text"
-              placeholder="How can I help?"
-              class="w-full border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-            />
-          </div>
-          <div class="flex flex-col gap-1.5">
-            <label for="message" class="text-sm font-medium text-stone-700">Message</label>
-            <textarea
-              id="message"
-              rows="5"
-              placeholder="Tell me about your project or idea..."
-              class="w-full border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition resize-none"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            class="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded-lg transition-colors text-sm"
-          >
-            Send message
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
-          </button>
-          <div id="form-success" class="hidden text-sm text-emerald-600 font-medium flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            Message sent! I'll get back to you soon.
-          </div>
-        </form>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
+        <!-- ============================================================
        FOOTER
   ============================================================ -->
-  <footer class="bg-stone-900 text-stone-400">
-    <div class="max-w-6xl mx-auto px-6 py-12">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8">
-        <!-- Left -->
-        <div>
-          <p class="text-white font-bold text-lg">VK<span class="text-indigo-400">.</span></p>
-          <p class="text-stone-500 text-sm mt-1">Building the web, one commit at a time.</p>
-        </div>
-        <!-- Right: nav -->
-        <nav class="flex flex-wrap gap-6">
-          <a href="#about" class="text-sm hover:text-white transition-colors">About</a>
-          <a href="#skills" class="text-sm hover:text-white transition-colors">Skills</a>
-          <a href="#projects" class="text-sm hover:text-white transition-colors">Projects</a>
-          <a href="#experience" class="text-sm hover:text-white transition-colors">Experience</a>
-          <a href="#contact" class="text-sm hover:text-white transition-colors">Contact</a>
-        </nav>
-      </div>
-      <div class="border-t border-stone-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-stone-500 text-sm">&copy; 2026 Vedran Krivokuca. All rights reserved.</p>
-        <div class="flex items-center gap-4">
-          <a href="https://github.com/vedran-krivokuca" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-white transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a href="https://linkedin.com/in/vedran-krivokuca" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-white transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-          <a href="https://twitter.com/vedran_k" target="_blank" rel="noopener" aria-label="Twitter / X" class="hover:text-white transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+        <footer class="bg-stone-900 text-stone-400">
+            <div class="max-w-6xl mx-auto px-6 py-12">
+                <div
+                    class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8"
+                >
+                    <!-- Left -->
+                    <div>
+                        <p class="text-white font-bold text-lg">
+                            VK<span class="text-sky-400">.</span>
+                        </p>
+                        <p class="text-stone-500 text-sm mt-1">
+                            Building the web, one commit at a time.
+                        </p>
+                    </div>
+                    <!-- Right: nav -->
+                    <nav class="flex flex-wrap gap-6">
+                        <a
+                            href="#about"
+                            class="text-sm hover:text-white transition-colors"
+                            >About</a
+                        >
+                        <a
+                            href="#skills"
+                            class="text-sm hover:text-white transition-colors"
+                            >Skills</a
+                        >
+                        <a
+                            href="#projects"
+                            class="text-sm hover:text-white transition-colors"
+                            >Projects</a
+                        >
+                        <a
+                            href="#experience"
+                            class="text-sm hover:text-white transition-colors"
+                            >Experience</a
+                        >
+                    </nav>
+                </div>
+                <div
+                    class="border-t border-stone-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+                >
+                    <p class="text-stone-500 text-sm">
+                        &copy; 2026 Vedran Krivokuca. All rights reserved.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a
+                            href="https://github.com/vedran-krivokuca"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                            class="hover:text-white transition-colors"
+                        >
+                            <svg
+                                class="w-4 h-4"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    clip-rule="evenodd"
+                                />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://linkedin.com/in/vedran-krivokuca"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="LinkedIn"
+                            class="hover:text-white transition-colors"
+                        >
+                            <svg
+                                class="w-4 h-4"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://twitter.com/vedran_k"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="Twitter / X"
+                            class="hover:text-white transition-colors"
+                        >
+                            <svg
+                                class="w-4 h-4"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-  <!-- ============================================================
+        <!-- ============================================================
        JS
   ============================================================ -->
-  <script>
-    // Mobile menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuOpenIcon = document.getElementById('menu-open-icon');
-    const menuCloseIcon = document.getElementById('menu-close-icon');
+        <script>
+            // Mobile menu
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const menuOpenIcon = document.getElementById("menu-open-icon");
+            const menuCloseIcon = document.getElementById("menu-close-icon");
 
-    menuToggle.addEventListener('click', () => {
-      const isOpen = !mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden');
-      menuOpenIcon.classList.toggle('hidden');
-      menuCloseIcon.classList.toggle('hidden');
-    });
+            menuToggle.addEventListener("click", () => {
+                const isOpen = !mobileMenu.classList.contains("hidden");
+                mobileMenu.classList.toggle("hidden");
+                menuOpenIcon.classList.toggle("hidden");
+                menuCloseIcon.classList.toggle("hidden");
+            });
 
-    function closeMobileMenu() {
-      mobileMenu.classList.add('hidden');
-      menuOpenIcon.classList.remove('hidden');
-      menuCloseIcon.classList.add('hidden');
-    }
+            function closeMobileMenu() {
+                mobileMenu.classList.add("hidden");
+                menuOpenIcon.classList.remove("hidden");
+                menuCloseIcon.classList.add("hidden");
+            }
 
-    // Contact form (visual only)
-    function handleSubmit(e) {
-      e.preventDefault();
-      const successMsg = document.getElementById('form-success');
-      successMsg.classList.remove('hidden');
-      e.target.reset();
-      setTimeout(() => successMsg.classList.add('hidden'), 5000);
-    }
-  </script>
-
-</body>
+            // "Get in touch" — scroll to hero and blink social icons
+            function highlightSocials() {
+                const socialIcons = document.getElementById("social-icons");
+                socialIcons.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+                socialIcons.classList.remove("social-blink");
+                void socialIcons.offsetWidth; // reflow to restart animation
+                socialIcons.classList.add("social-blink");
+                setTimeout(
+                    () => socialIcons.classList.remove("social-blink"),
+                    1000,
+                );
+            }
+        </script>
+    </body>
 </html>
