@@ -51,106 +51,7 @@
                 },
             };
         </script>
-        <style>
-            html {
-                font-family: "Inter", sans-serif;
-            }
-            .gradient-text {
-                background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-            .glass {
-                background: rgba(250, 250, 249, 0.8);
-                backdrop-filter: blur(12px);
-                -webkit-backdrop-filter: blur(12px);
-            }
-            .timeline-item::before {
-                content: "";
-                position: absolute;
-                left: -0.5625rem;
-                top: 0.375rem;
-                width: 1.125rem;
-                height: 1.125rem;
-                background: white;
-                border: 2px solid #0284c7;
-                border-radius: 50%;
-            }
-            @keyframes blink {
-                0%,
-                100% {
-                    opacity: 1;
-                }
-                50% {
-                    opacity: 0;
-                }
-            }
-            .cursor {
-                animation: blink 1s step-end infinite;
-            }
-            @keyframes social-highlight {
-                0% {
-                    color: #0284c7;
-                    transform: scale(1.25);
-                }
-                25% {
-                    color: inherit;
-                    transform: scale(1);
-                }
-                50% {
-                    color: #0284c7;
-                    transform: scale(1.25);
-                }
-                75% {
-                    color: inherit;
-                    transform: scale(1);
-                }
-                100% {
-                    color: #0284c7;
-                    transform: scale(1.25);
-                }
-            }
-            .social-blink a {
-                animation: social-highlight 0.9s ease-in-out forwards;
-            }
-            .status-cursor {
-                animation: blink 0.65s step-end infinite;
-                color: #15803d;
-            }
-            .icon {
-                display: block;
-                background-color: currentColor;
-                -webkit-mask-size: contain;
-                mask-size: contain;
-                -webkit-mask-repeat: no-repeat;
-                mask-repeat: no-repeat;
-                -webkit-mask-position: center;
-                mask-position: center;
-                -webkit-mask-mode: alpha;
-                mask-mode: alpha;
-            }
-            .icon-github {
-                -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyQzYuNDc3IDIgMiA2LjQ4NCAyIDEyLjAxN2MwIDQuNDI1IDIuODY1IDguMTggNi44MzkgOS41MDQuNS4wOTIuNjgyLS4yMTcuNjgyLS40ODMgMC0uMjM3LS4wMDgtLjg2OC0uMDEzLTEuNzAzLTIuNzgyLjYwNS0zLjM2OS0xLjM0My0zLjM2OS0xLjM0My0uNDU0LTEuMTU4LTEuMTEtMS40NjYtMS4xMS0xLjQ2Ni0uOTA4LS42Mi4wNjktLjYwOC4wNjktLjYwOCAxLjAwMy4wNyAxLjUzMSAxLjAzMiAxLjUzMSAxLjAzMi44OTIgMS41MyAyLjM0MSAxLjA4OCAyLjkxLjgzMi4wOTItLjY0Ny4zNS0xLjA4OC42MzYtMS4zMzgtMi4yMi0uMjUzLTQuNTU1LTEuMTEzLTQuNTU1LTQuOTUxIDAtMS4wOTMuMzktMS45ODggMS4wMjktMi42ODgtLjEwMy0uMjUzLS40NDYtMS4yNzIuMDk4LTIuNjUgMCAwIC44NC0uMjcgMi43NSAxLjAyNkE5LjU2NCA5LjU2NCAwIDAxMTIgNi44NDRjLjg1LjAwNCAxLjcwNS4xMTUgMi41MDQuMzM3IDEuOTA5LTEuMjk2IDIuNzQ3LTEuMDI3IDIuNzQ3LTEuMDI3LjU0NiAxLjM3OS4yMDIgMi4zOTguMSAyLjY1MS42NC43IDEuMDI4IDEuNTk1IDEuMDI4IDIuNjg4IDAgMy44NDgtMi4zMzkgNC42OTUtNC41NjYgNC45NDMuMzU5LjMwOS42NzguOTIuNjc4IDEuODU1IDAgMS4zMzgtLjAxMiAyLjQxOS0uMDEyIDIuNzQ3IDAgLjI2OC4xOC41OC42ODguNDgyQTEwLjAxOSAxMC4wMTkgMCAwMDIyIDEyLjAxN0MyMiA2LjQ4NCAxNy41MjIgMiAxMiAyeiIgY2xpcC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPgo=");
-                mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyQzYuNDc3IDIgMiA2LjQ4NCAyIDEyLjAxN2MwIDQuNDI1IDIuODY1IDguMTggNi44MzkgOS41MDQuNS4wOTIuNjgyLS4yMTcuNjgyLS40ODMgMC0uMjM3LS4wMDgtLjg2OC0uMDEzLTEuNzAzLTIuNzgyLjYwNS0zLjM2OS0xLjM0My0zLjM2OS0xLjM0My0uNDU0LTEuMTU4LTEuMTEtMS40NjYtMS4xMS0xLjQ2Ni0uOTA4LS42Mi4wNjktLjYwOC4wNjktLjYwOCAxLjAwMy4wNyAxLjUzMSAxLjAzMiAxLjUzMSAxLjAzMi44OTIgMS41MyAyLjM0MSAxLjA4OCAyLjkxLjgzMi4wOTItLjY0Ny4zNS0xLjA4OC42MzYtMS4zMzgtMi4yMi0uMjUzLTQuNTU1LTEuMTEzLTQuNTU1LTQuOTUxIDAtMS4wOTMuMzktMS45ODggMS4wMjktMi42ODgtLjEwMy0uMjUzLS40NDYtMS4yNzIuMDk4LTIuNjUgMCAwIC44NC0uMjcgMi43NSAxLjAyNkE5LjU2NCA5LjU2NCAwIDAxMTIgNi44NDRjLjg1LjAwNCAxLjcwNS4xMTUgMi41MDQuMzM3IDEuOTA5LTEuMjk2IDIuNzQ3LTEuMDI3IDIuNzQ3LTEuMDI3LjU0NiAxLjM3OS4yMDIgMi4zOTguMSAyLjY1MS42NC43IDEuMDI4IDEuNTk1IDEuMDI4IDIuNjg4IDAgMy44NDgtMi4zMzkgNC42OTUtNC41NjYgNC45NDMuMzU5LjMwOS42NzguOTIuNjc4IDEuODU1IDAgMS4zMzgtLjAxMiAyLjQxOS0uMDEyIDIuNzQ3IDAgLjI2OC4xOC41OC42ODguNDgyQTEwLjAxOSAxMC4wMTkgMCAwMDIyIDEyLjAxN0MyMiA2LjQ4NCAxNy41MjIgMiAxMiAyeiIgY2xpcC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPgo=");
-            }
-            .icon-linkedin {
-                -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMjAuNDQ3IDIwLjQ1MmgtMy41NTR2LTUuNTY5YzAtMS4zMjgtLjAyNy0zLjAzNy0xLjg1Mi0zLjAzNy0xLjg1MyAwLTIuMTM2IDEuNDQ1LTIuMTM2IDIuOTM5djUuNjY3SDkuMzUxVjloMy40MTR2MS41NjFoLjA0NmMuNDc3LS45IDEuNjM3LTEuODUgMy4zNy0xLjg1IDMuNjAxIDAgNC4yNjcgMi4zNyA0LjI2NyA1LjQ1NXY2LjI4NnpNNS4zMzcgNy40MzNhMi4wNjIgMi4wNjIgMCAwMS0yLjA2My0yLjA2NSAyLjA2NCAyLjA2NCAwIDExMi4wNjMgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiIvPgo8L3N2Zz4K");
-                mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMjAuNDQ3IDIwLjQ1MmgtMy41NTR2LTUuNTY5YzAtMS4zMjgtLjAyNy0zLjAzNy0xLjg1Mi0zLjAzNy0xLjg1MyAwLTIuMTM2IDEuNDQ1LTIuMTM2IDIuOTM5djUuNjY3SDkuMzUxVjloMy40MTR2MS41NjFoLjA0NmMuNDc3LS45IDEuNjM3LTEuODUgMy4zNy0xLjg1IDMuNjAxIDAgNC4yNjcgMi4zNyA0LjI2NyA1LjQ1NXY2LjI4NnpNNS4zMzcgNy40MzNhMi4wNjIgMi4wNjIgMCAwMS0yLjA2My0yLjA2NSAyLjA2NCAyLjA2NCAwIDExMi4wNjMgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiIvPgo8L3N2Zz4K");
-            }
-            .icon-mastodon {
-                -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMjMuMjY4IDUuMzEzYy0uMzUtMi41NzgtMi42MTctNC42MS01LjMwNC01LjAwNEMxNy41MS4yNDIgMTUuNzkyIDAgMTEuODEzIDBoLS4wM2MtMy45OCAwLTQuODM1LjI0Mi01LjI4OC4zMDlDMy44ODIuNjkyIDEuNDk2IDIuNTE4LjkxNyA1LjEyNy42NCA2LjQxMi42MSA3LjgzNy42NjEgOS4xNDNjLjA3NCAxLjg3NC4wODggMy43NDUuMjYgNS42MTEuMTE4IDEuMjQuMzI1IDIuNDcuNjIgMy42OC41NSAyLjIzNyAyLjc3NyA0LjA5OCA0Ljk2IDQuODU3IDIuMzM2Ljc5MiA0Ljg0OS45MjMgNy4yNTYuMzguMjY1LS4wNjEuNTI3LS4xMzIuNzg2LS4yMTMuNTg1LS4xODQgMS4yNy0uMzkgMS43NzQtLjc1M2EuMDU3LjA1NyAwIDAgMCAuMDIzLS4wNDN2LTEuODA5YS4wNTIuMDUyIDAgMCAwLS4wMi0uMDQxLjA1My4wNTMgMCAwIDAtLjA0Ni0uMDEgMjAuMjgyIDIwLjI4MiAwIDAgMS00LjcwOS41NDVjLTIuNzMgMC0zLjQ2My0xLjI4NC0zLjY3NC0xLjgxOGE1LjU5MyA1LjU5MyAwIDAgMS0uMzE5LTEuNDMzLjA1My4wNTMgMCAwIDEgLjA2Ni0uMDU0YzEuNTE3LjM2MyAzLjA3Mi41NDYgNC42MzIuNTQ2LjM3NiAwIC43NSAwIDEuMTI1LS4wMSAxLjU3LS4wNDQgMy4yMjQtLjEyNCA0Ljc2OC0uNDIyLjAzOC0uMDA4LjA3Ny0uMDE1LjExLS4wMjQgMi40MzUtLjQ2NCA0Ljc1My0xLjkyIDQuOTg5LTUuNjA0LjAwOC0uMTQ1LjAzLTEuNTIuMDMtMS42Ny4wMDItLjUxMi4xNjctMy42My0uMDI0LTUuNTQ1em0tMy43NDggOS4xOTVoLTIuNTYxVjguMjljMC0xLjMwOS0uNTUtMS45NzYtMS42Ny0xLjk3Ni0xLjIzIDAtMS44NDYuNzktMS44NDYgMi4zNXYzLjQwM2gtMi41NDZWOC42NjNjMC0xLjU2LS42MTctMi4zNS0xLjg0OC0yLjM1LTEuMTEyIDAtMS42NjguNjY4LTEuNjcgMS45Nzd2Ni4yMThINC44MjJWOC4xMDJjMC0xLjMxLjMzNy0yLjM1IDEuMDExLTMuMTIuNjk2LS43NyAxLjYwOC0xLjE2NCAyLjc0LTEuMTY0IDEuMzExIDAgMi4zMDIuNSAyLjk2MiAxLjQ5OGwuNjM4IDEuMDYuNjM4LTEuMDZjLjY2LS45OTkgMS42NS0xLjQ5OCAyLjk2LTEuNDk4IDEuMTMgMCAyLjA0My4zOTUgMi43NCAxLjE2NC42NzUuNzcgMS4wMTIgMS44MSAxLjAxMiAzLjEyeiIvPgo8L3N2Zz4K");
-                mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMjMuMjY4IDUuMzEzYy0uMzUtMi41NzgtMi42MTctNC42MS01LjMwNC01LjAwNEMxNy41MS4yNDIgMTUuNzkyIDAgMTEuODEzIDBoLS4wM2MtMy45OCAwLTQuODM1LjI0Mi01LjI4OC4zMDlDMy44ODIuNjkyIDEuNDk2IDIuNTE4LjkxNyA1LjEyNy42NCA2LjQxMi42MSA3LjgzNy42NjEgOS4xNDNjLjA3NCAxLjg3NC4wODggMy43NDUuMjYgNS42MTEuMTE4IDEuMjQuMzI1IDIuNDcuNjIgMy42OC41NSAyLjIzNyAyLjc3NyA0LjA5OCA0Ljk2IDQuODU3IDIuMzM2Ljc5MiA0Ljg0OS45MjMgNy4yNTYuMzguMjY1LS4wNjEuNTI3LS4xMzIuNzg2LS4yMTMuNTg1LS4xODQgMS4yNy0uMzkgMS43NzQtLjc1M2EuMDU3LjA1NyAwIDAgMCAuMDIzLS4wNDN2LTEuODA5YS4wNTIuMDUyIDAgMCAwLS4wMi0uMDQxLjA1My4wNTMgMCAwIDAtLjA0Ni0uMDEgMjAuMjgyIDIwLjI4MiAwIDAgMS00LjcwOS41NDVjLTIuNzMgMC0zLjQ2My0xLjI4NC0zLjY3NC0xLjgxOGE1LjU5MyA1LjU5MyAwIDAgMS0uMzE5LTEuNDMzLjA1My4wNTMgMCAwIDEgLjA2Ni0uMDU0YzEuNTE3LjM2MyAzLjA3Mi41NDYgNC42MzIuNTQ2LjM3NiAwIC43NSAwIDEuMTI1LS4wMSAxLjU3LS4wNDQgMy4yMjQtLjEyNCA0Ljc2OC0uNDIyLjAzOC0uMDA4LjA3Ny0uMDE1LjExLS4wMjQgMi40MzUtLjQ2NCA0Ljc1My0xLjkyIDQuOTg5LTUuNjA0LjAwOC0uMTQ1LjAzLTEuNTIuMDMtMS42Ny4wMDItLjUxMi4xNjctMy42My0uMDI0LTUuNTQ1em0tMy43NDggOS4xOTVoLTIuNTYxVjguMjljMC0xLjMwOS0uNTUtMS45NzYtMS42Ny0xLjk3Ni0xLjIzIDAtMS44NDYuNzktMS44NDYgMi4zNXYzLjQwM2gtMi41NDZWOC42NjNjMC0xLjU2LS42MTctMi4zNS0xLjg0OC0yLjM1LTEuMTEyIDAtMS42NjguNjY4LTEuNjcgMS45Nzd2Ni4yMThINC44MjJWOC4xMDJjMC0xLjMxLjMzNy0yLjM1IDEuMDExLTMuMTIuNjk2LS43NyAxLjYwOC0xLjE2NCAyLjc0LTEuMTY0IDEuMzExIDAgMi4zMDIuNSAyLjk2MiAxLjQ5OGwuNjM4IDEuMDYuNjM4LTEuMDZjLjY2LS45OTkgMS42NS0xLjQ5OCAyLjk2LTEuNDk4IDEuMTMgMCAyLjA0My4zOTUgMi43NCAxLjE2NC42NzUuNzcgMS4wMTIgMS44MSAxLjAxMiAzLjEyeiIvPgo8L3N2Zz4K");
-            }
-            .icon-email {
-                -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMyA4bDcuODkgNS4yNmEyIDIgMCAwMDIuMjIgMEwyMSA4TTUgMTloMTRhMiAyIDAgMDAyLTJWN2EyIDIgMCAwMC0yLTJINWEyIDIgMCAwMC0yIDJ2MTBhMiAyIDAgMDAyIDJ6Ii8+Cjwvc3ZnPgo=");
-                mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMyA4bDcuODkgNS4yNmEyIDIgMCAwMDIuMjIgMEwyMSA4TTUgMTloMTRhMiAyIDAgMDAyLTJWN2EyIDIgMCAwMC0yLTJINWEyIDIgMCAwMC0yIDJ2MTBhMiAyIDAgMDAyIDJ6Ii8+Cjwvc3ZnPgo=");
-            }
-            .icon-x {
-                -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMTguMjQ0IDIuMjVoMy4zMDhsLTcuMjI3IDguMjYgOC41MDIgMTEuMjRIMTYuMTdsLTUuMjE0LTYuODE3TDQuOTkgMjEuNzVIMS42OGw3LjczLTguODM1TDEuMjU0IDIuMjVIOC4wOGw0LjcxMyA2LjIzMXptLTEuMTYxIDE3LjUyaDEuODMzTDcuMDg0IDQuMTI2SDUuMTE3eiIvPgo8L3N2Zz4K");
-                mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMTguMjQ0IDIuMjVoMy4zMDhsLTcuMjI3IDguMjYgOC41MDIgMTEuMjRIMTYuMTdsLTUuMjE0LTYuODE3TDQuOTkgMjEuNzVIMS42OGw3LjczLTguODM1TDEuMjU0IDIuMjVIOC4wOGw0LjcxMyA2LjIzMXptLTEuMTYxIDE3LjUyaDEuODMzTDcuMDg0IDQuMTI2SDUuMTE3eiIvPgo8L3N2Zz4K");
-            }
-        </style>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body class="bg-stone-50 text-stone-900 antialiased">
         <img
@@ -184,17 +85,17 @@
                 <div class="hidden md:flex items-center gap-8">
                     <a
                         href="#about"
-                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        class="nav-link"
                         >About</a
                     >
                     <a
                         href="#skills"
-                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        class="nav-link"
                         >Skills</a
                     >
                     <a
                         href="#experience"
-                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        class="nav-link"
                         >Experience</a
                     >
                 </div>
@@ -252,19 +153,19 @@
                 <div class="px-6 py-4 flex flex-col gap-4">
                     <a
                         href="#about"
-                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        class="nav-link"
                         onclick="closeMobileMenu()"
                         >About</a
                     >
                     <a
                         href="#skills"
-                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        class="nav-link"
                         onclick="closeMobileMenu()"
                         >Skills</a
                     >
                     <a
                         href="#experience"
-                        class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+                        class="nav-link"
                         onclick="closeMobileMenu()"
                         >Experience</a
                     >
@@ -383,7 +284,7 @@
                                 target="_blank"
                                 rel="noopener"
                                 aria-label="GitHub"
-                                class="text-stone-400 hover:text-stone-900 transition-colors"
+                                class="social-link"
                             >
                                 <span class="icon icon-github w-5 h-5"></span>
                             </a>
@@ -392,7 +293,7 @@
                                 target="_blank"
                                 rel="noopener"
                                 aria-label="LinkedIn"
-                                class="text-stone-400 hover:text-stone-900 transition-colors"
+                                class="social-link"
                             >
                                 <span class="icon icon-linkedin w-5 h-5"></span>
                             </a>
@@ -401,14 +302,14 @@
                                 target="_blank"
                                 rel="noopener"
                                 aria-label="Mastodon"
-                                class="text-stone-400 hover:text-stone-900 transition-colors"
+                                class="social-link"
                             >
                                 <span class="icon icon-mastodon w-5 h-5"></span>
                             </a>
                             <a
                                 href="mailto:vedran@krivokuca.net"
                                 aria-label="Email"
-                                class="text-stone-400 hover:text-stone-900 transition-colors"
+                                class="social-link"
                             >
                                 <span class="icon icon-email w-5 h-5"></span>
                             </a>
@@ -454,11 +355,11 @@
                 <!-- Section header -->
                 <div class="mb-16">
                     <p
-                        class="text-sky-600 text-sm font-semibold tracking-widest uppercase mb-3"
+                        class="section-eyebrow"
                     >
                         About me
                     </p>
-                    <h2 class="text-3xl sm:text-4xl font-bold">
+                    <h2 class="section-heading">
                         A bit about myself
                     </h2>
                 </div>
@@ -497,38 +398,38 @@
                     <!-- Stat cards -->
                     <div class="grid grid-cols-2 gap-4">
                         <div
-                            class="bg-stone-50 rounded-xl p-6 border border-stone-100"
+                            class="stat-card"
                         >
                             <p class="text-3xl font-bold gradient-text">∞+</p>
-                            <p class="text-stone-500 text-sm mt-1 font-medium">
+                            <p class="stat-label">
                                 Years of experience
                             </p>
                         </div>
                         <div
-                            class="bg-stone-50 rounded-xl p-6 border border-stone-100"
+                            class="stat-card"
                         >
                             <p class="text-3xl font-bold gradient-text">
                                 countless
                             </p>
-                            <p class="text-stone-500 text-sm mt-1 font-medium">
+                            <p class="stat-label">
                                 Projects delivered
                             </p>
                         </div>
                         <div
-                            class="bg-stone-50 rounded-xl p-6 border border-stone-100"
+                            class="stat-card"
                         >
                             <p class="text-3xl font-bold gradient-text">
                                 a few
                             </p>
-                            <p class="text-stone-500 text-sm mt-1 font-medium">
+                            <p class="stat-label">
                                 Open source contributions
                             </p>
                         </div>
                         <div
-                            class="bg-stone-50 rounded-xl p-6 border border-stone-100"
+                            class="stat-card"
                         >
                             <p class="text-3xl font-bold gradient-text">2</p>
-                            <p class="text-stone-500 text-sm mt-1 font-medium">
+                            <p class="stat-label">
                                 Countries worked in
                             </p>
                         </div>
@@ -544,11 +445,11 @@
             <div class="max-w-6xl mx-auto px-6">
                 <div class="mb-16">
                     <p
-                        class="text-sky-600 text-sm font-semibold tracking-widest uppercase mb-3"
+                        class="section-eyebrow"
                     >
                         Skills
                     </p>
-                    <h2 class="text-3xl sm:text-4xl font-bold">
+                    <h2 class="section-heading">
                         Technologies I work with
                     </h2>
                 </div>
@@ -557,29 +458,29 @@
                     <!-- Languages -->
                     <div>
                         <p
-                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                            class="category-label"
                         >
                             Languages
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="badge-group">
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Python</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Go</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Bash</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Java</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Rust</span
                             >
                         </div>
@@ -588,29 +489,29 @@
                     <!-- Backend -->
                     <div>
                         <p
-                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                            class="category-label"
                         >
                             Backend
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="badge-group">
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Django</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >FastAPI</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >GraphQL</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >REST APIs</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >WebSockets</span
                             >
                         </div>
@@ -619,33 +520,33 @@
                     <!-- Database -->
                     <div>
                         <p
-                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                            class="category-label"
                         >
                             Database
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="badge-group">
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >PostgreSQL</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >MongoDB</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Redis</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >SQLite</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >MySQL</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >MariaDB</span
                             >
                         </div>
@@ -654,57 +555,57 @@
                     <!-- DevOps -->
                     <div>
                         <p
-                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                            class="category-label"
                         >
                             Infra &amp; DevOps
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="badge-group">
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >On-Premise</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >AWS</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >GCP</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Docker</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >GitHub Actions</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Kubernetes</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Terraform</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >OpenTofu</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Terragrunt</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Pulumi</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Ansible</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Puppet</span
                             >
                         </div>
@@ -713,53 +614,53 @@
                     <!-- Tools -->
                     <div>
                         <p
-                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
+                            class="category-label"
                         >
                             Tools
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="badge-group">
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Git</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >GitLab</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >GitHub</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Forgejo</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Perforce</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Codium</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >vim</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >helix</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >zed</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Postman</span
                             >
                             <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                class="badge"
                                 >Bruno</span
                             >
                         </div>
@@ -775,11 +676,11 @@
             <div class="max-w-6xl mx-auto px-6">
                 <div class="mb-16">
                     <p
-                        class="text-sky-600 text-sm font-semibold tracking-widest uppercase mb-3"
+                        class="section-eyebrow"
                     >
                         Experience
                     </p>
-                    <h2 class="text-3xl sm:text-4xl font-bold">
+                    <h2 class="section-heading">
                         Where I've worked
                     </h2>
                 </div>
@@ -789,208 +690,208 @@
                         class="border-l-2 border-stone-200 ml-2 flex flex-col gap-10"
                     >
                         <!-- Job 1 -->
-                        <div class="relative pl-8 timeline-item">
+                        <div class="timeline-item">
                             <div
-                                class="flex flex-wrap items-center justify-between gap-2 mb-1"
+                                class="job-header"
                             >
-                                <h3 class="font-bold text-lg text-stone-900">
+                                <h3 class="job-title">
                                     Senior Cloud Infrastructure Engineer
                                 </h3>
                                 <span
-                                    class="text-xs font-semibold text-sky-600 bg-sky-50 rounded-full px-3 py-1"
+                                    class="date-badge"
                                     >2026 — Present</span
                                 >
                             </div>
-                            <p class="text-sky-600 font-medium text-sm mb-3">
+                            <p class="company-name">
                                 TBA - coming soon!
                             </p>
-                            <p class="text-stone-500 text-sm leading-relaxed">
+                            <p class="job-desc">
                                 Making robots go "wow, nice!"
                             </p>
-                            <div class="flex flex-wrap gap-1.5 mt-3">
+                            <div class="job-tags">
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >GCP</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Terraform</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Python</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Docker</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Kubernetes</span
                                 >
                             </div>
                         </div>
 
                         <!-- Job 2 -->
-                        <div class="relative pl-8 timeline-item">
+                        <div class="timeline-item">
                             <div
-                                class="flex flex-wrap items-center justify-between gap-2 mb-1"
+                                class="job-header"
                             >
-                                <h3 class="font-bold text-lg text-stone-900">
+                                <h3 class="job-title">
                                     Infrastructure - Founding Engineer
                                 </h3>
                                 <span
-                                    class="text-xs font-semibold text-sky-600 bg-sky-50 rounded-full px-3 py-1"
+                                    class="date-badge"
                                     >2025</span
                                 >
                             </div>
-                            <p class="text-sky-600 font-medium text-sm mb-3">
+                            <p class="company-name">
                                 Rakuten Embedded Finance
                             </p>
-                            <p class="text-stone-500 text-sm leading-relaxed">
+                            <p class="job-desc">
                                 Technical leadership in infrastructure. Building
                                 the team up, defining high level architecture,
                                 implementing secure and compliant AWS
                                 infrastructure for online banking product.
                             </p>
-                            <div class="flex flex-wrap gap-1.5 mt-3">
+                            <div class="job-tags">
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >AWS</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Kubernetes</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Docker</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >PostgreSQL</span
                                 >
                             </div>
                         </div>
 
                         <!-- Job 3 -->
-                        <div class="relative pl-8 timeline-item">
+                        <div class="timeline-item">
                             <div
-                                class="flex flex-wrap items-center justify-between gap-2 mb-1"
+                                class="job-header"
                             >
-                                <h3 class="font-bold text-lg text-stone-900">
+                                <h3 class="job-title">
                                     Principal Software Engineer - DevOps
                                 </h3>
                                 <span
-                                    class="text-xs font-semibold text-sky-600 bg-sky-50 rounded-full px-3 py-1"
+                                    class="date-badge"
                                     >2018 — 2025</span
                                 >
                             </div>
-                            <p class="text-sky-600 font-medium text-sm mb-3">
+                            <p class="company-name">
                                 Workday
                             </p>
-                            <p class="text-stone-500 text-sm leading-relaxed">
+                            <p class="job-desc">
                                 Technical leadership, DevOps and software
                                 development tasks across multiple teams in
                                 multiple areas.
                             </p>
-                            <div class="flex flex-wrap gap-1.5 mt-3">
+                            <div class="job-tags">
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Java</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Scala</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Kubernetes</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Flink</span
                                 >
                             </div>
                         </div>
 
                         <!-- Job 4 -->
-                        <div class="relative pl-8 timeline-item">
+                        <div class="timeline-item">
                             <div
-                                class="flex flex-wrap items-center justify-between gap-2 mb-1"
+                                class="job-header"
                             >
-                                <h3 class="font-bold text-lg text-stone-900">
+                                <h3 class="job-title">
                                     Senior DevOps Engineer
                                 </h3>
                                 <span
-                                    class="text-xs font-semibold text-sky-600 bg-sky-50 rounded-full px-3 py-1"
+                                    class="date-badge"
                                     >2015 — 2018</span
                                 >
                             </div>
-                            <p class="text-sky-600 font-medium text-sm mb-3">
+                            <p class="company-name">
                                 Definiens (subsidiary of AstraZeneca)
                             </p>
-                            <p class="text-stone-500 text-sm leading-relaxed">
+                            <p class="job-desc">
                                 In charge of the DevEx and professional services
                                 (CX) tooling, on-premise + AWS hybrid cloud,
                                 on-premise Kubernetes setup from the scratch.
                             </p>
-                            <div class="flex flex-wrap gap-1.5 mt-3">
+                            <div class="job-tags">
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Python</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Kubernetes</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >VMWare</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >AWS</span
                                 >
                             </div>
                         </div>
 
                         <!-- Job 4 -->
-                        <div class="relative pl-8 timeline-item">
+                        <div class="timeline-item">
                             <div
-                                class="flex flex-wrap items-center justify-between gap-2 mb-1"
+                                class="job-header"
                             >
-                                <h3 class="font-bold text-lg text-stone-900">
+                                <h3 class="job-title">
                                     Lead Software Developer
                                 </h3>
                                 <span
-                                    class="text-xs font-semibold text-sky-600 bg-sky-50 rounded-full px-3 py-1"
+                                    class="date-badge"
                                     >2014 — 2015</span
                                 >
                             </div>
-                            <p class="text-sky-600 font-medium text-sm mb-3">
+                            <p class="company-name">
                                 Shopping Guide (subsidiary of Lagardère)
                             </p>
-                            <p class="text-stone-500 text-sm leading-relaxed">
+                            <p class="job-desc">
                                 Lead Software Developer for the gamified price
                                 comparison site Dooyoo, Senior Software
                                 Developer for the price comparison site Ciao!.
                             </p>
-                            <div class="flex flex-wrap gap-1.5 mt-3">
+                            <div class="job-tags">
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >PHP</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >MySQL</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Redis</span
                                 >
                                 <span
-                                    class="text-xs bg-stone-100 text-stone-600 rounded-full px-2.5 py-0.5"
+                                    class="tag"
                                     >Puppet</span
                                 >
                             </div>
@@ -1030,17 +931,17 @@
                     <nav class="flex flex-wrap gap-6">
                         <a
                             href="#about"
-                            class="text-sm hover:text-white transition-colors"
+                            class="footer-link text-sm"
                             >About</a
                         >
                         <a
                             href="#skills"
-                            class="text-sm hover:text-white transition-colors"
+                            class="footer-link text-sm"
                             >Skills</a
                         >
                         <a
                             href="#experience"
-                            class="text-sm hover:text-white transition-colors"
+                            class="footer-link text-sm"
                             >Experience</a
                         >
                     </nav>
@@ -1057,7 +958,7 @@
                             target="_blank"
                             rel="noopener"
                             aria-label="GitHub"
-                            class="hover:text-white transition-colors"
+                            class="footer-link"
                         >
                             <span class="icon icon-github w-4 h-4"></span>
                         </a>
@@ -1066,7 +967,7 @@
                             target="_blank"
                             rel="noopener"
                             aria-label="LinkedIn"
-                            class="hover:text-white transition-colors"
+                            class="footer-link"
                         >
                             <span class="icon icon-linkedin w-4 h-4"></span>
                         </a>
@@ -1075,14 +976,14 @@
                             target="_blank"
                             rel="noopener"
                             aria-label="Mastodon"
-                            class="hover:text-white transition-colors"
+                            class="footer-link"
                         >
                             <span class="icon icon-mastodon w-4 h-4"></span>
                         </a>
                         <a
                             href="mailto:vedran@krivokuca.net"
                             aria-label="Email"
-                            class="hover:text-white transition-colors"
+                            class="footer-link"
                         >
                             <span class="icon icon-email w-4 h-4"></span>
                         </a>
@@ -1091,114 +992,6 @@
             </div>
         </footer>
 
-        <!-- ============================================================
-       JS
-  ============================================================ -->
-        <script>
-            // Status punchline rotator
-            const punchlines = [
-                "teaching robots how to tie knots",
-                "teaching robots how to pour beer",
-                "outrunning the robots",
-                "putting robot brains to the cloud",
-                "beep-bee-bee-boop-bee-doo-weep",
-            ];
-            const el = document.getElementById("status-punchline");
-            const shuffled = [...punchlines].sort(() => Math.random() - 0.5);
-            let idx = 0;
-            const TYPE_SPEED = 48; // ms per character
-            const CYCLE = 6900; // total ms per punchline (type + hold + delete + gap)
-            const DELETE_GAP = 350; // pause after last word deleted before next starts
-            const WORD_DELETE = 250; // ms between each word deletion
-
-            function type(text, done) {
-                let i = 0;
-                (function next() {
-                    if (i < text.length) {
-                        el.textContent += text[i++];
-                        setTimeout(next, TYPE_SPEED);
-                    } else {
-                        done();
-                    }
-                })();
-            }
-
-            function cycle() {
-                const text = shuffled[idx];
-                idx = (idx + 1) % shuffled.length;
-                type(text, () => {
-                    const typed = text.length * TYPE_SPEED;
-                    const wordCount = text.split(" ").length;
-                    const deleteTime = wordCount * WORD_DELETE;
-                    const hold = Math.max(
-                        CYCLE - typed - deleteTime - DELETE_GAP,
-                        2000,
-                    );
-                    setTimeout(() => {
-                        // cmd+backspace word by word from the end
-                        const words = el.textContent.split(" ");
-                        (function deleteNext() {
-                            if (words.length > 0) {
-                                words.pop();
-                                el.textContent = words.join(" ");
-                                setTimeout(deleteNext, WORD_DELETE);
-                            } else {
-                                setTimeout(cycle, DELETE_GAP);
-                            }
-                        })();
-                    }, hold);
-                });
-            }
-
-            cycle();
-            document.getElementById("footer-punchline").textContent =
-                punchlines[Math.floor(Math.random() * punchlines.length)];
-
-            // Mobile menu
-            const menuToggle = document.getElementById("menu-toggle");
-            const mobileMenu = document.getElementById("mobile-menu");
-            const menuOpenIcon = document.getElementById("menu-open-icon");
-            const menuCloseIcon = document.getElementById("menu-close-icon");
-
-            menuToggle.addEventListener("click", () => {
-                const isOpen = !mobileMenu.classList.contains("hidden");
-                mobileMenu.classList.toggle("hidden");
-                menuOpenIcon.classList.toggle("hidden");
-                menuCloseIcon.classList.toggle("hidden");
-            });
-
-            function closeMobileMenu() {
-                mobileMenu.classList.add("hidden");
-                menuOpenIcon.classList.remove("hidden");
-                menuCloseIcon.classList.add("hidden");
-            }
-
-            // "Get in touch" — scroll to hero and blink social icons
-            function highlightSocials() {
-                const socialIcons = document.getElementById("social-icons");
-                socialIcons.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                });
-                socialIcons.classList.remove("social-blink");
-                void socialIcons.offsetWidth; // reflow to restart animation
-                socialIcons.classList.add("social-blink");
-                setTimeout(
-                    () => socialIcons.classList.remove("social-blink"),
-                    1000,
-                );
-            }
-
-            // Pin robot-bg height to footer height
-            const robotBg = document.querySelector(
-                'img[src="images/robot-bg.svg"]',
-            );
-            const footer = document.getElementById("site-footer");
-            function syncRobotHeight() {
-                robotBg.style.maxHeight = footer.offsetHeight + "px";
-            }
-            syncRobotHeight();
-            new ResizeObserver(syncRobotHeight).observe(footer);
-        </script>
+        <script src="main.js"></script>
     </body>
 </html>
