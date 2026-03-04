@@ -116,11 +116,58 @@
             }
             .status-cursor {
                 animation: blink 0.65s step-end infinite;
-                font-weight: 300;
+                color: #15803d;
+            }
+            .icon {
+                display: block;
+                background-color: currentColor;
+                -webkit-mask-size: contain;
+                mask-size: contain;
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+                -webkit-mask-position: center;
+                mask-position: center;
+                -webkit-mask-mode: alpha;
+                mask-mode: alpha;
+            }
+            .icon-github {
+                -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyQzYuNDc3IDIgMiA2LjQ4NCAyIDEyLjAxN2MwIDQuNDI1IDIuODY1IDguMTggNi44MzkgOS41MDQuNS4wOTIuNjgyLS4yMTcuNjgyLS40ODMgMC0uMjM3LS4wMDgtLjg2OC0uMDEzLTEuNzAzLTIuNzgyLjYwNS0zLjM2OS0xLjM0My0zLjM2OS0xLjM0My0uNDU0LTEuMTU4LTEuMTEtMS40NjYtMS4xMS0xLjQ2Ni0uOTA4LS42Mi4wNjktLjYwOC4wNjktLjYwOCAxLjAwMy4wNyAxLjUzMSAxLjAzMiAxLjUzMSAxLjAzMi44OTIgMS41MyAyLjM0MSAxLjA4OCAyLjkxLjgzMi4wOTItLjY0Ny4zNS0xLjA4OC42MzYtMS4zMzgtMi4yMi0uMjUzLTQuNTU1LTEuMTEzLTQuNTU1LTQuOTUxIDAtMS4wOTMuMzktMS45ODggMS4wMjktMi42ODgtLjEwMy0uMjUzLS40NDYtMS4yNzIuMDk4LTIuNjUgMCAwIC44NC0uMjcgMi43NSAxLjAyNkE5LjU2NCA5LjU2NCAwIDAxMTIgNi44NDRjLjg1LjAwNCAxLjcwNS4xMTUgMi41MDQuMzM3IDEuOTA5LTEuMjk2IDIuNzQ3LTEuMDI3IDIuNzQ3LTEuMDI3LjU0NiAxLjM3OS4yMDIgMi4zOTguMSAyLjY1MS42NC43IDEuMDI4IDEuNTk1IDEuMDI4IDIuNjg4IDAgMy44NDgtMi4zMzkgNC42OTUtNC41NjYgNC45NDMuMzU5LjMwOS42NzguOTIuNjc4IDEuODU1IDAgMS4zMzgtLjAxMiAyLjQxOS0uMDEyIDIuNzQ3IDAgLjI2OC4xOC41OC42ODguNDgyQTEwLjAxOSAxMC4wMTkgMCAwMDIyIDEyLjAxN0MyMiA2LjQ4NCAxNy41MjIgMiAxMiAyeiIgY2xpcC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPgo=");
+                mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyQzYuNDc3IDIgMiA2LjQ4NCAyIDEyLjAxN2MwIDQuNDI1IDIuODY1IDguMTggNi44MzkgOS41MDQuNS4wOTIuNjgyLS4yMTcuNjgyLS40ODMgMC0uMjM3LS4wMDgtLjg2OC0uMDEzLTEuNzAzLTIuNzgyLjYwNS0zLjM2OS0xLjM0My0zLjM2OS0xLjM0My0uNDU0LTEuMTU4LTEuMTEtMS40NjYtMS4xMS0xLjQ2Ni0uOTA4LS42Mi4wNjktLjYwOC4wNjktLjYwOCAxLjAwMy4wNyAxLjUzMSAxLjAzMiAxLjUzMSAxLjAzMi44OTIgMS41MyAyLjM0MSAxLjA4OCAyLjkxLjgzMi4wOTItLjY0Ny4zNS0xLjA4OC42MzYtMS4zMzgtMi4yMi0uMjUzLTQuNTU1LTEuMTEzLTQuNTU1LTQuOTUxIDAtMS4wOTMuMzktMS45ODggMS4wMjktMi42ODgtLjEwMy0uMjUzLS40NDYtMS4yNzIuMDk4LTIuNjUgMCAwIC44NC0uMjcgMi43NSAxLjAyNkE5LjU2NCA5LjU2NCAwIDAxMTIgNi44NDRjLjg1LjAwNCAxLjcwNS4xMTUgMi41MDQuMzM3IDEuOTA5LTEuMjk2IDIuNzQ3LTEuMDI3IDIuNzQ3LTEuMDI3LjU0NiAxLjM3OS4yMDIgMi4zOTguMSAyLjY1MS42NC43IDEuMDI4IDEuNTk1IDEuMDI4IDIuNjg4IDAgMy44NDgtMi4zMzkgNC42OTUtNC41NjYgNC45NDMuMzU5LjMwOS42NzguOTIuNjc4IDEuODU1IDAgMS4zMzgtLjAxMiAyLjQxOS0uMDEyIDIuNzQ3IDAgLjI2OC4xOC41OC42ODguNDgyQTEwLjAxOSAxMC4wMTkgMCAwMDIyIDEyLjAxN0MyMiA2LjQ4NCAxNy41MjIgMiAxMiAyeiIgY2xpcC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPgo=");
+            }
+            .icon-linkedin {
+                -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMjAuNDQ3IDIwLjQ1MmgtMy41NTR2LTUuNTY5YzAtMS4zMjgtLjAyNy0zLjAzNy0xLjg1Mi0zLjAzNy0xLjg1MyAwLTIuMTM2IDEuNDQ1LTIuMTM2IDIuOTM5djUuNjY3SDkuMzUxVjloMy40MTR2MS41NjFoLjA0NmMuNDc3LS45IDEuNjM3LTEuODUgMy4zNy0xLjg1IDMuNjAxIDAgNC4yNjcgMi4zNyA0LjI2NyA1LjQ1NXY2LjI4NnpNNS4zMzcgNy40MzNhMi4wNjIgMi4wNjIgMCAwMS0yLjA2My0yLjA2NSAyLjA2NCAyLjA2NCAwIDExMi4wNjMgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiIvPgo8L3N2Zz4K");
+                mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMjAuNDQ3IDIwLjQ1MmgtMy41NTR2LTUuNTY5YzAtMS4zMjgtLjAyNy0zLjAzNy0xLjg1Mi0zLjAzNy0xLjg1MyAwLTIuMTM2IDEuNDQ1LTIuMTM2IDIuOTM5djUuNjY3SDkuMzUxVjloMy40MTR2MS41NjFoLjA0NmMuNDc3LS45IDEuNjM3LTEuODUgMy4zNy0xLjg1IDMuNjAxIDAgNC4yNjcgMi4zNyA0LjI2NyA1LjQ1NXY2LjI4NnpNNS4zMzcgNy40MzNhMi4wNjIgMi4wNjIgMCAwMS0yLjA2My0yLjA2NSAyLjA2NCAyLjA2NCAwIDExMi4wNjMgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiIvPgo8L3N2Zz4K");
+            }
+            .icon-mastodon {
+                -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMjMuMjY4IDUuMzEzYy0uMzUtMi41NzgtMi42MTctNC42MS01LjMwNC01LjAwNEMxNy41MS4yNDIgMTUuNzkyIDAgMTEuODEzIDBoLS4wM2MtMy45OCAwLTQuODM1LjI0Mi01LjI4OC4zMDlDMy44ODIuNjkyIDEuNDk2IDIuNTE4LjkxNyA1LjEyNy42NCA2LjQxMi42MSA3LjgzNy42NjEgOS4xNDNjLjA3NCAxLjg3NC4wODggMy43NDUuMjYgNS42MTEuMTE4IDEuMjQuMzI1IDIuNDcuNjIgMy42OC41NSAyLjIzNyAyLjc3NyA0LjA5OCA0Ljk2IDQuODU3IDIuMzM2Ljc5MiA0Ljg0OS45MjMgNy4yNTYuMzguMjY1LS4wNjEuNTI3LS4xMzIuNzg2LS4yMTMuNTg1LS4xODQgMS4yNy0uMzkgMS43NzQtLjc1M2EuMDU3LjA1NyAwIDAgMCAuMDIzLS4wNDN2LTEuODA5YS4wNTIuMDUyIDAgMCAwLS4wMi0uMDQxLjA1My4wNTMgMCAwIDAtLjA0Ni0uMDEgMjAuMjgyIDIwLjI4MiAwIDAgMS00LjcwOS41NDVjLTIuNzMgMC0zLjQ2My0xLjI4NC0zLjY3NC0xLjgxOGE1LjU5MyA1LjU5MyAwIDAgMS0uMzE5LTEuNDMzLjA1My4wNTMgMCAwIDEgLjA2Ni0uMDU0YzEuNTE3LjM2MyAzLjA3Mi41NDYgNC42MzIuNTQ2LjM3NiAwIC43NSAwIDEuMTI1LS4wMSAxLjU3LS4wNDQgMy4yMjQtLjEyNCA0Ljc2OC0uNDIyLjAzOC0uMDA4LjA3Ny0uMDE1LjExLS4wMjQgMi40MzUtLjQ2NCA0Ljc1My0xLjkyIDQuOTg5LTUuNjA0LjAwOC0uMTQ1LjAzLTEuNTIuMDMtMS42Ny4wMDItLjUxMi4xNjctMy42My0uMDI0LTUuNTQ1em0tMy43NDggOS4xOTVoLTIuNTYxVjguMjljMC0xLjMwOS0uNTUtMS45NzYtMS42Ny0xLjk3Ni0xLjIzIDAtMS44NDYuNzktMS44NDYgMi4zNXYzLjQwM2gtMi41NDZWOC42NjNjMC0xLjU2LS42MTctMi4zNS0xLjg0OC0yLjM1LTEuMTEyIDAtMS42NjguNjY4LTEuNjcgMS45Nzd2Ni4yMThINC44MjJWOC4xMDJjMC0xLjMxLjMzNy0yLjM1IDEuMDExLTMuMTIuNjk2LS43NyAxLjYwOC0xLjE2NCAyLjc0LTEuMTY0IDEuMzExIDAgMi4zMDIuNSAyLjk2MiAxLjQ5OGwuNjM4IDEuMDYuNjM4LTEuMDZjLjY2LS45OTkgMS42NS0xLjQ5OCAyLjk2LTEuNDk4IDEuMTMgMCAyLjA0My4zOTUgMi43NCAxLjE2NC42NzUuNzcgMS4wMTIgMS44MSAxLjAxMiAzLjEyeiIvPgo8L3N2Zz4K");
+                mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMjMuMjY4IDUuMzEzYy0uMzUtMi41NzgtMi42MTctNC42MS01LjMwNC01LjAwNEMxNy41MS4yNDIgMTUuNzkyIDAgMTEuODEzIDBoLS4wM2MtMy45OCAwLTQuODM1LjI0Mi01LjI4OC4zMDlDMy44ODIuNjkyIDEuNDk2IDIuNTE4LjkxNyA1LjEyNy42NCA2LjQxMi42MSA3LjgzNy42NjEgOS4xNDNjLjA3NCAxLjg3NC4wODggMy43NDUuMjYgNS42MTEuMTE4IDEuMjQuMzI1IDIuNDcuNjIgMy42OC41NSAyLjIzNyAyLjc3NyA0LjA5OCA0Ljk2IDQuODU3IDIuMzM2Ljc5MiA0Ljg0OS45MjMgNy4yNTYuMzguMjY1LS4wNjEuNTI3LS4xMzIuNzg2LS4yMTMuNTg1LS4xODQgMS4yNy0uMzkgMS43NzQtLjc1M2EuMDU3LjA1NyAwIDAgMCAuMDIzLS4wNDN2LTEuODA5YS4wNTIuMDUyIDAgMCAwLS4wMi0uMDQxLjA1My4wNTMgMCAwIDAtLjA0Ni0uMDEgMjAuMjgyIDIwLjI4MiAwIDAgMS00LjcwOS41NDVjLTIuNzMgMC0zLjQ2My0xLjI4NC0zLjY3NC0xLjgxOGE1LjU5MyA1LjU5MyAwIDAgMS0uMzE5LTEuNDMzLjA1My4wNTMgMCAwIDEgLjA2Ni0uMDU0YzEuNTE3LjM2MyAzLjA3Mi41NDYgNC42MzIuNTQ2LjM3NiAwIC43NSAwIDEuMTI1LS4wMSAxLjU3LS4wNDQgMy4yMjQtLjEyNCA0Ljc2OC0uNDIyLjAzOC0uMDA4LjA3Ny0uMDE1LjExLS4wMjQgMi40MzUtLjQ2NCA0Ljc1My0xLjkyIDQuOTg5LTUuNjA0LjAwOC0uMTQ1LjAzLTEuNTIuMDMtMS42Ny4wMDItLjUxMi4xNjctMy42My0uMDI0LTUuNTQ1em0tMy43NDggOS4xOTVoLTIuNTYxVjguMjljMC0xLjMwOS0uNTUtMS45NzYtMS42Ny0xLjk3Ni0xLjIzIDAtMS44NDYuNzktMS44NDYgMi4zNXYzLjQwM2gtMi41NDZWOC42NjNjMC0xLjU2LS42MTctMi4zNS0xLjg0OC0yLjM1LTEuMTEyIDAtMS42NjguNjY4LTEuNjcgMS45Nzd2Ni4yMThINC44MjJWOC4xMDJjMC0xLjMxLjMzNy0yLjM1IDEuMDExLTMuMTIuNjk2LS43NyAxLjYwOC0xLjE2NCAyLjc0LTEuMTY0IDEuMzExIDAgMi4zMDIuNSAyLjk2MiAxLjQ5OGwuNjM4IDEuMDYuNjM4LTEuMDZjLjY2LS45OTkgMS42NS0xLjQ5OCAyLjk2LTEuNDk4IDEuMTMgMCAyLjA0My4zOTUgMi43NCAxLjE2NC42NzUuNzcgMS4wMTIgMS44MSAxLjAxMiAzLjEyeiIvPgo8L3N2Zz4K");
+            }
+            .icon-email {
+                -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMyA4bDcuODkgNS4yNmEyIDIgMCAwMDIuMjIgMEwyMSA4TTUgMTloMTRhMiAyIDAgMDAyLTJWN2EyIDIgMCAwMC0yLTJINWEyIDIgMCAwMC0yIDJ2MTBhMiAyIDAgMDAyIDJ6Ii8+Cjwvc3ZnPgo=");
+                mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMyA4bDcuODkgNS4yNmEyIDIgMCAwMDIuMjIgMEwyMSA4TTUgMTloMTRhMiAyIDAgMDAyLTJWN2EyIDIgMCAwMC0yLTJINWEyIDIgMCAwMC0yIDJ2MTBhMiAyIDAgMDAyIDJ6Ii8+Cjwvc3ZnPgo=");
+            }
+            .icon-x {
+                -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMTguMjQ0IDIuMjVoMy4zMDhsLTcuMjI3IDguMjYgOC41MDIgMTEuMjRIMTYuMTdsLTUuMjE0LTYuODE3TDQuOTkgMjEuNzVIMS42OGw3LjczLTguODM1TDEuMjU0IDIuMjVIOC4wOGw0LjcxMyA2LjIzMXptLTEuMTYxIDE3LjUyaDEuODMzTDcuMDg0IDQuMTI2SDUuMTE3eiIvPgo8L3N2Zz4K");
+                mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMTguMjQ0IDIuMjVoMy4zMDhsLTcuMjI3IDguMjYgOC41MDIgMTEuMjRIMTYuMTdsLTUuMjE0LTYuODE3TDQuOTkgMjEuNzVIMS42OGw3LjczLTguODM1TDEuMjU0IDIuMjVIOC4wOGw0LjcxMyA2LjIzMXptLTEuMTYxIDE3LjUyaDEuODMzTDcuMDg0IDQuMTI2SDUuMTE3eiIvPgo8L3N2Zz4K");
             }
         </style>
     </head>
     <body class="bg-stone-50 text-stone-900 antialiased">
+        <img
+            src="images/robot-bg.svg"
+            alt=""
+            aria-hidden="true"
+            style="
+                position: fixed;
+                bottom: 0;
+                right: max(1.5rem, calc(50vw - 36rem + 1.5rem));
+                pointer-events: none;
+                z-index: 0;
+                user-select: none;
+                padding: 0.5rem 0 0.5rem 0.5rem;
+            "
+        />
+
         <!-- ============================================================
        NAVBAR
   ============================================================ -->
@@ -262,9 +309,9 @@
                                     class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"
                                 ></span>
                             </span>
-                            Current status: happy camper;
+                            Hiring availability: happy camper;
                             <span id="status-punchline"></span
-                            ><span class="status-cursor">|</span>
+                            ><span class="status-cursor">█</span>
                         </div>
 
                         <!-- Heading -->
@@ -316,7 +363,7 @@
                                     />
                                 </svg>
                             </a>
-                            <a
+                            <!--<a
                                 href="/resume.pdf"
                                 class="inline-flex items-center gap-2 bg-white hover:bg-stone-50 text-stone-700 font-medium px-5 py-2.5 rounded-lg border border-stone-200 transition-colors text-sm"
                             >
@@ -334,7 +381,7 @@
                                         d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                                     />
                                 </svg>
-                            </a>
+                            </a>-->
                         </div>
 
                         <!-- Social icons -->
@@ -349,17 +396,7 @@
                                 aria-label="GitHub"
                                 class="text-stone-400 hover:text-stone-900 transition-colors"
                             >
-                                <svg
-                                    class="w-5 h-5"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                        clip-rule="evenodd"
-                                    />
-                                </svg>
+                                <span class="icon icon-github w-5 h-5"></span>
                             </a>
                             <a
                                 href="https://linkedin.com/in/casastorta"
@@ -368,15 +405,7 @@
                                 aria-label="LinkedIn"
                                 class="text-stone-400 hover:text-stone-900 transition-colors"
                             >
-                                <svg
-                                    class="w-5 h-5"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                                    />
-                                </svg>
+                                <span class="icon icon-linkedin w-5 h-5"></span>
                             </a>
                             <a
                                 href="https://mastodon.online/@casastorta"
@@ -385,34 +414,14 @@
                                 aria-label="Mastodon"
                                 class="text-stone-400 hover:text-stone-900 transition-colors"
                             >
-                                <svg
-                                    class="w-5 h-5"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"
-                                    />
-                                </svg>
+                                <span class="icon icon-mastodon w-5 h-5"></span>
                             </a>
                             <a
                                 href="mailto:vedran@krivokuca.net"
                                 aria-label="Email"
                                 class="text-stone-400 hover:text-stone-900 transition-colors"
                             >
-                                <svg
-                                    class="w-5 h-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                    />
-                                </svg>
+                                <span class="icon icon-email w-5 h-5"></span>
                             </a>
                         </div>
                     </div>
@@ -424,7 +433,7 @@
                         >
                             <pre
                                 class="font-mono text-sm leading-relaxed p-6 text-stone-300 overflow-x-auto"
-                            ><code><span class="text-violet-400">const</span> <span class="text-sky-300">developer</span> <span class="text-stone-400">=</span> <span class="text-yellow-300">{</span>
+                            ><code><span class="text-violet-400">const</span> <span class="text-sky-300">engineer</span> <span class="text-stone-400">=</span> <span class="text-yellow-300">{</span>
   <span class="text-sky-300">name</span><span class="text-stone-400">:</span>     <span class="text-emerald-400">"Vedran Krivokuca"</span><span class="text-stone-400">,</span>
   <span class="text-sky-300">role</span><span class="text-stone-400">:</span>     <span class="text-emerald-400">"Senior+ Software / Infra Engineer"</span><span class="text-stone-400">,</span>
   <span class="text-sky-300">location</span><span class="text-stone-400">:</span> <span class="text-emerald-400">"Munich, Germany"</span><span class="text-stone-400">,</span>
@@ -440,7 +449,7 @@
 <span class="text-yellow-300">}</span><span class="text-stone-400">;</span>
 
 <span class="text-stone-600">// Ready to build something great? 🚀</span>
-<span class="text-violet-400">export default</span> <span class="text-sky-300">developer</span><span class="text-stone-400">;</span>
+<span class="text-violet-400">export default</span> <span class="text-sky-300">engineer</span><span class="text-stone-400">;</span>
 <span class="cursor text-stone-400">▋</span></code></pre>
                         </div>
                     </div>
@@ -471,29 +480,28 @@
                         class="flex flex-col gap-5 text-stone-500 leading-relaxed"
                     >
                         <p>
-                            I'm a Senior Software Engineer with over five years
-                            of professional experience designing and shipping
-                            full-stack web applications. My journey started with
-                            a deep curiosity for how things work on the web,
-                            which quickly evolved into a passion for building
-                            clean, performant, and maintainable systems.
+                            I'm a Senior+ Software, DevOps, Platform and
+                            Infrastructure Engineer with many years of
+                            professional experience designing and shipping
+                            on-premise, cloud and hybrid infrastructure with
+                            open-source and proprietary tooling development. I
+                            have a strong passion for building clean,
+                            performant, and maintainable systems.
                         </p>
                         <p>
-                            I thrive at the intersection of product thinking and
-                            engineering craft — whether that means architecting
-                            a real-time collaborative platform, optimising
-                            database queries for sub-50ms response times, or
-                            mentoring junior developers through code review. I
-                            believe great software is a team sport and that
-                            writing code is an act of communication.
+                            I thrive at the intersection of infrastructure and
+                            software development engineering craft. I believe
+                            great software is a team sport and that writing code
+                            is an act of communication.
                         </p>
                         <p>
-                            Outside of work I contribute to open-source
-                            projects, explore new frameworks, speak at local
-                            meetups, and occasionally write about software
-                            design on my blog. When I'm not behind a keyboard
-                            you'll find me hiking the Croatian coast or
-                            experimenting with sourdough bread.
+                            Outside of work majority of my time is focused on my
+                            family, but I sometimes contribute to open-source
+                            projects, explore new tooling, read technical blogs
+                            and books. When I'm not behind a keyboard you'll
+                            find me cycling across Munich and surroundings or
+                            experimenting with espresso making and optimizing
+                            cooking of the Weißwurst.
                         </p>
                     </div>
 
@@ -502,7 +510,7 @@
                         <div
                             class="bg-stone-50 rounded-xl p-6 border border-stone-100"
                         >
-                            <p class="text-3xl font-bold gradient-text">5+</p>
+                            <p class="text-3xl font-bold gradient-text">∞+</p>
                             <p class="text-stone-500 text-sm mt-1 font-medium">
                                 Years of experience
                             </p>
@@ -510,7 +518,9 @@
                         <div
                             class="bg-stone-50 rounded-xl p-6 border border-stone-100"
                         >
-                            <p class="text-3xl font-bold gradient-text">30+</p>
+                            <p class="text-3xl font-bold gradient-text">
+                                countless
+                            </p>
                             <p class="text-stone-500 text-sm mt-1 font-medium">
                                 Projects delivered
                             </p>
@@ -518,7 +528,9 @@
                         <div
                             class="bg-stone-50 rounded-xl p-6 border border-stone-100"
                         >
-                            <p class="text-3xl font-bold gradient-text">10+</p>
+                            <p class="text-3xl font-bold gradient-text">
+                                a few
+                            </p>
                             <p class="text-stone-500 text-sm mt-1 font-medium">
                                 Open source contributions
                             </p>
@@ -526,7 +538,7 @@
                         <div
                             class="bg-stone-50 rounded-xl p-6 border border-stone-100"
                         >
-                            <p class="text-3xl font-bold gradient-text">3</p>
+                            <p class="text-3xl font-bold gradient-text">2</p>
                             <p class="text-stone-500 text-sm mt-1 font-medium">
                                 Countries worked in
                             </p>
@@ -563,14 +575,6 @@
                         <div class="flex flex-wrap gap-2">
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >TypeScript</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >JavaScript</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
                                 >Python</span
                             >
                             <span
@@ -579,50 +583,15 @@
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >SQL</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
                                 >Bash</span
                             >
-                        </div>
-                    </div>
-
-                    <!-- Frontend -->
-                    <div>
-                        <p
-                            class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
-                        >
-                            Frontend
-                        </p>
-                        <div class="flex flex-wrap gap-2">
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >React</span
+                                >Java</span
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Next.js</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Tailwind CSS</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Vite</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Zustand</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >React Query</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Framer Motion</span
+                                >Rust</span
                             >
                         </div>
                     </div>
@@ -637,19 +606,11 @@
                         <div class="flex flex-wrap gap-2">
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Node.js</span
+                                >Django</span
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Express</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Fastify</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >tRPC</span
+                                >FastAPI</span
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
@@ -692,11 +653,11 @@
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Prisma ORM</span
+                                >MySQL</span
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Drizzle ORM</span
+                                >MariaDB</span
                             >
                         </div>
                     </div>
@@ -706,12 +667,20 @@
                         <p
                             class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-3"
                         >
-                            DevOps
+                            Infra &amp; DevOps
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >On-Premise</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
                                 >AWS</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >GCP</span
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
@@ -731,7 +700,23 @@
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Nginx</span
+                                >OpenTofu</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Terragrunt</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Pulumi</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Ansible</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Puppet</span
                             >
                         </div>
                     </div>
@@ -750,15 +735,35 @@
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >VS Code</span
+                                >GitLab</span
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Figma</span
+                                >GitHub</span
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Linear</span
+                                >Forgejo</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Perforce</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >Codium</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >vim</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >helix</span
+                            >
+                            <span
+                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
+                                >zed</span
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
@@ -766,11 +771,7 @@
                             >
                             <span
                                 class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Datadog</span
-                            >
-                            <span
-                                class="bg-stone-100 text-stone-700 rounded-full px-3 py-1 text-sm font-medium"
-                                >Sentry</span
+                                >Bruno</span
                             >
                         </div>
                     </div>
@@ -825,17 +826,9 @@
                                     aria-label="GitHub"
                                     class="text-stone-400 hover:text-stone-700 transition-colors"
                                 >
-                                    <svg
-                                        class="w-4 h-4"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                            clip-rule="evenodd"
-                                        />
-                                    </svg>
+                                    <span
+                                        class="icon icon-github w-4 h-4"
+                                    ></span>
                                 </a>
                                 <a
                                     href="#"
@@ -920,17 +913,9 @@
                                     aria-label="GitHub"
                                     class="text-stone-400 hover:text-stone-700 transition-colors"
                                 >
-                                    <svg
-                                        class="w-4 h-4"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                            clip-rule="evenodd"
-                                        />
-                                    </svg>
+                                    <span
+                                        class="icon icon-github w-4 h-4"
+                                    ></span>
                                 </a>
                                 <a
                                     href="#"
@@ -1015,17 +1000,9 @@
                                     aria-label="GitHub"
                                     class="text-stone-400 hover:text-stone-700 transition-colors"
                                 >
-                                    <svg
-                                        class="w-4 h-4"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                            clip-rule="evenodd"
-                                        />
-                                    </svg>
+                                    <span
+                                        class="icon icon-github w-4 h-4"
+                                    ></span>
                                 </a>
                                 <a
                                     href="#"
@@ -1275,7 +1252,7 @@
         <!-- ============================================================
        FOOTER
   ============================================================ -->
-        <footer class="bg-stone-900 text-stone-400">
+        <footer id="site-footer" class="bg-stone-900 text-stone-400">
             <div class="max-w-6xl mx-auto px-6 py-12">
                 <div
                     class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8"
@@ -1327,17 +1304,7 @@
                             aria-label="GitHub"
                             class="hover:text-white transition-colors"
                         >
-                            <svg
-                                class="w-4 h-4"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                    clip-rule="evenodd"
-                                />
-                            </svg>
+                            <span class="icon icon-github w-4 h-4"></span>
                         </a>
                         <a
                             href="https://linkedin.com/in/vedran-krivokuca"
@@ -1346,15 +1313,7 @@
                             aria-label="LinkedIn"
                             class="hover:text-white transition-colors"
                         >
-                            <svg
-                                class="w-4 h-4"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                                />
-                            </svg>
+                            <span class="icon icon-linkedin w-4 h-4"></span>
                         </a>
                         <a
                             href="https://twitter.com/vedran_k"
@@ -1363,15 +1322,7 @@
                             aria-label="Twitter / X"
                             class="hover:text-white transition-colors"
                         >
-                            <svg
-                                class="w-4 h-4"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                                />
-                            </svg>
+                            <span class="icon icon-x w-4 h-4"></span>
                         </a>
                     </div>
                 </div>
@@ -1473,6 +1424,17 @@
                     1000,
                 );
             }
+
+            // Pin robot-bg height to footer height
+            const robotBg = document.querySelector(
+                'img[src="images/robot-bg.svg"]',
+            );
+            const footer = document.getElementById("site-footer");
+            function syncRobotHeight() {
+                robotBg.style.maxHeight = footer.offsetHeight + "px";
+            }
+            syncRobotHeight();
+            new ResizeObserver(syncRobotHeight).observe(footer);
         </script>
     </body>
 </html>
