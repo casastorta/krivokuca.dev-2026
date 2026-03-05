@@ -200,7 +200,7 @@
                                 Hi, I'm
                                 <span class="gradient-text">Vedran</span
                                 >.<br />Vedran
-                                <span class="gradient-text">Krivokuća.</span>
+                                <span class="gradient-text">Krivokuća</span>.
                             </h1>
                             <p class="mt-1 text-m text-stone-400 italic">
                                 /ˈwed;rʌn kriːvoˈkutʃɑ/
@@ -242,25 +242,6 @@
                                     />
                                 </svg>
                             </a>
-                            <!--<a
-                                href="/resume.pdf"
-                                class="inline-flex items-center gap-2 bg-white hover:bg-stone-50 text-stone-700 font-medium px-5 py-2.5 rounded-lg border border-stone-200 transition-colors text-sm"
-                            >
-                                Download CV
-                                <svg
-                                    class="w-4 h-4"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                                    />
-                                </svg>
-                            </a>-->
                         </div>
 
                         <!-- Social icons -->
@@ -305,10 +286,10 @@
                         </div>
                     </div>
 
-                    <!-- Right col — Terminal card -->
+                    <!-- Right col — Loading card -->
                     <div class="hidden lg:block">
                         <div
-                            class="bg-stone-900 rounded-2xl overflow-hidden ring-1 ring-stone-700/50"
+                            class="bg-stone-900 rounded-2xl overflow-hidden ring-1 ring-stone-700/50 p-6 font-mono text-sm"
                             style="
                                 box-shadow:
                                     0 2px 4px rgba(0, 0, 0, 0.08),
@@ -316,26 +297,25 @@
                                     0 24px 48px rgba(0, 0, 0, 0.12);
                             "
                         >
-                            <pre
-                                class="font-mono text-sm leading-relaxed p-6 text-stone-300 overflow-x-auto"
-                            ><code><span class="text-violet-400">const</span> <span class="text-sky-300">engineer</span> <span class="text-stone-400">=</span> <span class="text-yellow-300">{</span>
-  <span class="text-sky-300">name</span><span class="text-stone-400">:</span>     <span class="text-emerald-400">"Vedran Krivokuca"</span><span class="text-stone-400">,</span>
-  <span class="text-sky-300">role</span><span class="text-stone-400">:</span>     <span class="text-emerald-400">"Senior+ Software / Infra Engineer"</span><span class="text-stone-400">,</span>
-  <span class="text-sky-300">location</span><span class="text-stone-400">:</span> <span class="text-emerald-400">"Munich, Germany"</span><span class="text-stone-400">,</span>
+                            <!-- Title bar -->
+                            <p class="text-stone-500 mb-6">
+                                // initializing engineer.exe
+                            </p>
 
-  <span class="text-sky-300">skills</span><span class="text-stone-400">:</span> <span class="text-yellow-300">[</span>
-    <span class="text-emerald-400">"Python"</span><span class="text-stone-400">,</span> <span class="text-emerald-400">"Go"</span><span class="text-stone-400">,</span>
-    <span class="text-emerald-400">"Rust"</span><span class="text-stone-400">,</span>   <span class="text-emerald-400">"Kubernetes"</span><span class="text-stone-400">,</span>
-    <span class="text-emerald-400">"AWS"</span><span class="text-stone-400">,</span>    <span class="text-emerald-400">"GCP"</span><span class="text-stone-400">,</span>
-  <span class="text-yellow-300">]</span><span class="text-stone-400">,</span>
+                            <!-- Progress bars -->
+                            <div
+                                class="flex flex-col gap-5"
+                                id="loading-bars"
+                            ></div>
 
-  <span class="text-sky-300">currentFocus</span><span class="text-stone-400">:</span> <span class="text-emerald-400">"Contemplating robots"</span><span class="text-stone-400">,</span>
-  <span class="text-sky-300">available</span><span class="text-stone-400">:</span>    <span class="text-orange-400">?false</span><span class="text-stone-400">,</span>
-<span class="text-yellow-300">}</span><span class="text-stone-400">;</span>
-
-<span class="text-stone-600">// Ready to build something great? 🚀</span>
-<span class="text-violet-400">export default</span> <span class="text-sky-300">engineer</span><span class="text-stone-400">;</span>
-<span class="cursor text-stone-400">▋</span></code></pre>
+                            <!-- Footer -->
+                            <p class="text-stone-600 mt-6 text-xs">
+                                <span class="text-amber-400">warning:</span>
+                                some tasks may never complete<span
+                                    class="cursor text-stone-500"
+                                    >▋</span
+                                >
+                            </p>
                         </div>
                     </div>
                 </div>
