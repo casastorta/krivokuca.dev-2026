@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Side-Projects on VK</title>
+    <link>http://localhost:1313/blog/tags/side-projects/</link>
+    <description>Recent content in Side-Projects on VK</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/side-projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Finishing Things</title>
+      <link>http://localhost:1313/blog/posts/on-finishing-things/</link>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/posts/on-finishing-things/</guid>
+      <description>&lt;p&gt;I have, at last count, eleven unfinished side projects. A CLI tool for managing dotfiles that got to 80% before I decided to rewrite it in a different language. A home automation dashboard that works perfectly except for the bits that don&amp;rsquo;t. A blog engine — not this one, a different one, also unfinished.&lt;/p&gt;&#xA;&lt;p&gt;I am, it turns out, very good at starting things.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-80-problem&#34;&gt;The 80% problem&lt;/h2&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

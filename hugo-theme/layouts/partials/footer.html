@@ -1,0 +1,49 @@
+<footer class="bg-stone-900 text-stone-400 mt-auto">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-6">
+            <div>
+                <p class="text-white font-bold text-lg">
+                    {{ .Site.Title }}<span class="text-amber-400">.</span>
+                </p>
+                {{ with .Site.Params.tagline }}
+                <p class="text-stone-500 text-sm mt-1">{{ . }}</p>
+                {{ end }}
+            </div>
+            <div class="flex items-center gap-4">
+                {{ with .Site.Params.github }}
+                <a href="{{ . }}" target="_blank" rel="noopener" aria-label="GitHub" class="footer-link">
+                    <span class="icon icon-github w-4 h-4"></span>
+                </a>
+                {{ end }}
+                {{ with .Site.Params.linkedin }}
+                <a href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-link">
+                    <span class="icon icon-linkedin w-4 h-4"></span>
+                </a>
+                {{ end }}
+                {{ with .Site.Params.mastodon }}
+                <a href="{{ . }}" target="_blank" rel="noopener" aria-label="Mastodon" class="footer-link">
+                    <span class="icon icon-mastodon w-4 h-4"></span>
+                </a>
+                {{ end }}
+                {{ with .Site.Params.email }}
+                <a href="mailto:{{ . }}" aria-label="Email" class="footer-link">
+                    <span class="icon icon-email w-4 h-4"></span>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+        <div class="border-t border-stone-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p class="text-stone-500 text-sm">
+                &copy; {{ now.Year }} {{ .Site.Params.author | default .Site.Title }}. All rights reserved.
+            </p>
+            {{ with .OutputFormats.Get "rss" }}
+            <a href="{{ .Permalink }}" class="footer-link text-xs flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6.18 15.64a2.18 2.18 0 010 4.36 2.18 2.18 0 010-4.36M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44m0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93V10.1z"/>
+                </svg>
+                RSS
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</footer>

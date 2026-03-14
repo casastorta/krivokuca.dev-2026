@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on VK</title>
+    <link>http://localhost:1313/blog/tags/rust/</link>
+    <description>Recent content in Rust on VK</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Rust Is Hard (And Why That&#39;s the Point)</title>
+      <link>http://localhost:1313/blog/posts/why-rust-is-hard/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/posts/why-rust-is-hard/</guid>
+      <description>&lt;p&gt;The first time the Rust compiler rejected my code, I thought it was broken. The second time, I thought I was broken. By the hundredth time, I started to understand that the compiler was right all along — I just hadn&amp;rsquo;t been thinking carefully enough about ownership.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-borrow-checker-is-a-mirror&#34;&gt;The borrow checker is a mirror&lt;/h2&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

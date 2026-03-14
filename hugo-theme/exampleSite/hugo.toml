@@ -1,0 +1,47 @@
+baseURL      = "https://example.com/"
+languageCode = "en-us"
+title        = "VK"
+theme        = "vk"
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  description  = "Thoughts on software, infrastructure, and the occasional robot."
+  author       = "Vedran Krivokuca"
+  tagline      = "Building the web, one commit at a time."
+
+  # Hero
+  statusPrefix  = "Busy with:"
+  heroGreeting  = "Hi, I'm"
+  firstName     = "Vedran"
+  lastName      = "Krivokuća"
+  pronunciation = "/ˈwedrʌn kriːvoˈkutʃɑ/"
+  role          = "Senior<strong>+</strong> Software Engineer"
+  bio           = [
+    "I build scalable, cost- and security-optimized software, tooling and infrastructure.",
+    "Based in Munich, Germany. 🇩🇪🇪🇺"
+  ]
+  ctaLabel = "Read the blog"
+  ctaUrl   = "/posts/"
+
+  # Social (remove any you don't want)
+  github   = "https://github.com/yourhandle"
+  linkedin = "https://linkedin.com/in/yourhandle"
+  mastodon = "https://mastodon.social/@yourhandle"
+  email    = "you@example.com"
+
+[[menus.main]]
+  name = "Home"
+  url  = "/"
+  weight = 1
+
+[[menus.main]]
+  name = "Posts"
+  url  = "/posts/"
+  weight = 2
+
+[[menus.main]]
+  name = "Tags"
+  url  = "/tags/"
+  weight = 3

@@ -1,0 +1,59 @@
+{{ define "main" }}
+<article class="max-w-6xl mx-auto px-6 py-20">
+
+    <!-- Header -->
+    <header class="mb-12">
+        {{ with .Params.tags }}
+        <div class="badge-group mb-4">
+            {{ range . }}
+            <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag hover:bg-sky-50 hover:text-sky-700 transition-colors">{{ . }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <h1 class="text-3xl sm:text-4xl font-bold text-stone-900 mb-4 leading-tight">
+            {{ .Title }}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-3 text-stone-500 text-sm">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "January 2, 2006" }}
+            </time>
+            {{ if gt .ReadingTime 0 }}
+            <span class="text-stone-300">·</span>
+            <span>{{ .ReadingTime }} min read</span>
+            {{ end }}
+            {{ with .Params.author }}
+            <span class="text-stone-300">·</span>
+            <span>{{ . }}</span>
+            {{ end }}
+        </div>
+    </header>
+
+    <!-- Body -->
+    <div class="prose">
+        {{ .Content }}
+    </div>
+
+    <!-- Footer nav -->
+    <nav class="mt-16 pt-8 border-t border-stone-200 flex justify-between gap-4 text-sm">
+        {{ with .PrevInSection }}
+        <a href="{{ .RelPermalink }}" class="group flex items-center gap-2 text-stone-500 hover:text-sky-600 transition-colors max-w-xs">
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span class="line-clamp-1">{{ .Title }}</span>
+        </a>
+        {{ else }}<span></span>{{ end }}
+        {{ with .NextInSection }}
+        <a href="{{ .RelPermalink }}" class="group flex items-center gap-2 text-stone-500 hover:text-sky-600 transition-colors max-w-xs text-right">
+            <span class="line-clamp-1">{{ .Title }}</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+        </a>
+        {{ end }}
+    </nav>
+
+</article>
+{{ end }}

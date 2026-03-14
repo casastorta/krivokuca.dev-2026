@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on VK</title>
+    <link>http://localhost:1313/blog/posts/</link>
+    <description>Recent content in Posts on VK</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Finishing Things</title>
+      <link>http://localhost:1313/blog/posts/on-finishing-things/</link>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/posts/on-finishing-things/</guid>
+      <description>&lt;p&gt;I have, at last count, eleven unfinished side projects. A CLI tool for managing dotfiles that got to 80% before I decided to rewrite it in a different language. A home automation dashboard that works perfectly except for the bits that don&amp;rsquo;t. A blog engine — not this one, a different one, also unfinished.&lt;/p&gt;&#xA;&lt;p&gt;I am, it turns out, very good at starting things.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-80-problem&#34;&gt;The 80% problem&lt;/h2&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Why Rust Is Hard (And Why That&#39;s the Point)</title>
+      <link>http://localhost:1313/blog/posts/why-rust-is-hard/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/posts/why-rust-is-hard/</guid>
+      <description>&lt;p&gt;The first time the Rust compiler rejected my code, I thought it was broken. The second time, I thought I was broken. By the hundredth time, I started to understand that the compiler was right all along — I just hadn&amp;rsquo;t been thinking carefully enough about ownership.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-borrow-checker-is-a-mirror&#34;&gt;The borrow checker is a mirror&lt;/h2&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kubernetes Is Not a Deploy Button</title>
+      <link>http://localhost:1313/blog/posts/kubernetes-is-not-a-deploy-button/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/posts/kubernetes-is-not-a-deploy-button/</guid>
+      <description>&lt;p&gt;There is a pattern I&amp;rsquo;ve seen at every company past a certain size. Someone reads a blog post, attends a KubeCon talk, or hears a competitor mention Kubernetes in a press release. A decision is made. Six months later, a team of four is maintaining a 47-node cluster to serve an application that previously ran fine on three EC2 instances.&lt;/p&gt;&#xA;&lt;p&gt;This is not a Kubernetes problem. It&amp;rsquo;s a complexity budget problem.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

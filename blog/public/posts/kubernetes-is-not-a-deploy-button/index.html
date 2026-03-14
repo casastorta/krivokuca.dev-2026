@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+        <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kubernetes Is Not a Deploy Button · VK</title>
+<meta name="description" content="Everyone wants Kubernetes. Nobody wants to operate Kubernetes." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ["Inter", "ui-sans-serif", "system-ui"],
+                    mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+                },
+                colors: {
+                    stone: {
+                        50:  "#fafaf9",
+                        100: "#f5f5f4",
+                        200: "#e7e5e4",
+                        300: "#d6d3d1",
+                        400: "#a8a29e",
+                        500: "#78716c",
+                        600: "#57534e",
+                        700: "#44403c",
+                        800: "#292524",
+                        900: "#1c1917",
+                    },
+                },
+            },
+        },
+    };
+</script>
+<link rel="stylesheet" href="/blog/css/style.css" />
+
+    </head>
+    <body class="bg-stone-50 text-stone-900 antialiased min-h-screen flex flex-col">
+        <nav class="sticky top-0 z-50 glass border-b border-stone-100">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        
+        <a href="/" class="text-xl font-bold tracking-tight">
+            VK<span class="text-amber-400">.</span>
+        </a>
+
+        
+        <div class="hidden md:flex items-center gap-8">
+            
+            <a href="/blog/" class="nav-link">Home</a>
+            
+            <a href="/blog/blog/" class="nav-link">Blog</a>
+            
+            <a href="/blog/blog/posts/" class="nav-link">Posts</a>
+            
+            <a href="/blog/blog/tags/" class="nav-link">Tags</a>
+            
+        </div>
+
+        
+        <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 transition-colors" aria-label="Toggle menu">
+            <svg id="menu-open-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-close-icon" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
+    
+    <div id="mobile-menu" class="hidden md:hidden border-t border-stone-100 bg-stone-50/95 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+            
+            <a href="/blog/" class="nav-link py-1">Home</a>
+            
+            <a href="/blog/blog/" class="nav-link py-1">Blog</a>
+            
+            <a href="/blog/blog/posts/" class="nav-link py-1">Posts</a>
+            
+            <a href="/blog/blog/tags/" class="nav-link py-1">Tags</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+        <main class="flex-1">
+            
+<article class="max-w-6xl mx-auto px-6 py-20">
+
+    
+    <header class="mb-12">
+        
+        <div class="badge-group mb-4">
+            
+            <a href="/tags/kubernetes" class="tag hover:bg-sky-50 hover:text-sky-700 transition-colors">kubernetes</a>
+            
+            <a href="/tags/infrastructure" class="tag hover:bg-sky-50 hover:text-sky-700 transition-colors">infrastructure</a>
+            
+            <a href="/tags/devops" class="tag hover:bg-sky-50 hover:text-sky-700 transition-colors">devops</a>
+            
+        </div>
+        
+
+        <h1 class="text-3xl sm:text-4xl font-bold text-stone-900 mb-4 leading-tight">
+            Kubernetes Is Not a Deploy Button
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-3 text-stone-500 text-sm">
+            <time datetime="2026-01-29">
+                January 29, 2026
+            </time>
+            
+            <span class="text-stone-300">·</span>
+            <span>2 min read</span>
+            
+            
+        </div>
+    </header>
+
+    
+    <div class="prose">
+        <p>There is a pattern I&rsquo;ve seen at every company past a certain size. Someone reads a blog post, attends a KubeCon talk, or hears a competitor mention Kubernetes in a press release. A decision is made. Six months later, a team of four is maintaining a 47-node cluster to serve an application that previously ran fine on three EC2 instances.</p>
+<p>This is not a Kubernetes problem. It&rsquo;s a complexity budget problem.</p>
+<h2 id="what-kubernetes-actually-is">What Kubernetes actually is</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>Kubernetes is a distributed systems operating environment. It gives you primitives for scheduling containers, managing configuration, handling network traffic, and expressing desired state. What it does <em>not</em> give you is simplicity. It trades operational simplicity for operational power and consistency at scale.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-simple-app</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">app</span>: <span style="color:#ae81ff">my-simple-app</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">template</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">image</span>: <span style="color:#ae81ff">my-simple-app:latest</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># 47 more lines of YAML not shown</span>
+</span></span></code></pre></div><h2 id="the-hidden-costs">The hidden costs</h2>
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<ul>
+<li><strong>Cognitive load.</strong> Your engineers need to understand pods, deployments, services, ingresses, RBAC, namespaces, resource limits, and PodDisruptionBudgets before they can do anything meaningful.</li>
+<li><strong>Operational surface area.</strong> Control plane upgrades, etcd backups, node pool management, certificate rotation.</li>
+<li><strong>Debugging complexity.</strong> A request fails. Is it the app? The service mesh? The ingress controller? The network policy? DNS?</li>
+</ul>
+<h2 id="when-its-absolutely-worth-it">When it&rsquo;s absolutely worth it</h2>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+<p>When you have multiple teams deploying multiple services, when you need consistent environments across dev, staging, and production, when you&rsquo;re running workloads that genuinely need horizontal scaling and self-healing — Kubernetes earns its complexity tax.</p>
+<p>The mistake isn&rsquo;t adopting Kubernetes. The mistake is adopting it before you&rsquo;ve outgrown what came before.</p>
+
+    </div>
+
+    
+    <nav class="mt-16 pt-8 border-t border-stone-200 flex justify-between gap-4 text-sm">
+        <span></span>
+        
+        <a href="http://localhost:1313/blog/posts/why-rust-is-hard/" class="group flex items-center gap-2 text-stone-500 hover:text-sky-600 transition-colors max-w-xs text-right">
+            <span class="line-clamp-1">Why Rust Is Hard (And Why That&#39;s the Point)</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+        </a>
+        
+    </nav>
+
+</article>
+
+        </main>
+
+        <footer class="bg-stone-900 text-stone-400 mt-auto">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-6">
+            <div>
+                <p class="text-white font-bold text-lg">
+                    VK<span class="text-amber-400">.</span>
+                </p>
+                
+                <p class="text-stone-500 text-sm mt-1">Building the web, one commit at a time.</p>
+                
+            </div>
+            <div class="flex items-center gap-4">
+                
+                <a href="https://github.com/casastorta" target="_blank" rel="noopener" aria-label="GitHub" class="footer-link">
+                    <span class="icon icon-github w-4 h-4"></span>
+                </a>
+                
+                
+                <a href="https://linkedin.com/in/casastorta" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-link">
+                    <span class="icon icon-linkedin w-4 h-4"></span>
+                </a>
+                
+                
+                <a href="https://mastodon.online/@casastorta" target="_blank" rel="noopener" aria-label="Mastodon" class="footer-link">
+                    <span class="icon icon-mastodon w-4 h-4"></span>
+                </a>
+                
+                
+                <a href="mailto:vedran@krivokuca.net" aria-label="Email" class="footer-link">
+                    <span class="icon icon-email w-4 h-4"></span>
+                </a>
+                
+            </div>
+        </div>
+        <div class="border-t border-stone-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p class="text-stone-500 text-sm">
+                &copy; 2026 Vedran Krivokuca. All rights reserved.
+            </p>
+            
+        </div>
+    </div>
+</footer>
+
+
+        <script src="/blog/js/main.js"></script>
+    </body>
+</html>

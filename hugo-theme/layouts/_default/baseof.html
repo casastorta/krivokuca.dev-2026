@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang | default "en" }}" class="scroll-smooth">
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+    <body class="bg-stone-50 text-stone-900 antialiased min-h-screen flex flex-col">
+        {{ partial "nav.html" . }}
+
+        <main class="flex-1">
+            {{ block "main" . }}{{ end }}
+        </main>
+
+        {{ partial "footer.html" . }}
+
+        <script src="{{ "js/main.js" | relURL }}"></script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="max-w-6xl mx-auto px-6 py-20">
+
+    <div class="mb-12">
+        {{ with .Parent }}{{ if not .IsHome }}
+        <p class="section-eyebrow">{{ .Title }}</p>
+        {{ end }}{{ end }}
+        <h1 class="section-heading">{{ .Title }}</h1>
+        {{ with .Content }}<div class="job-desc mt-3 max-w-xl">{{ . }}</div>{{ end }}
+    </div>
+
+    {{ if .Pages }}
+    <div class="flex flex-col gap-4">
+        {{ range .Pages }}
+        <a href="{{ .RelPermalink }}" class="post-card block group">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                <h2 class="text-lg font-bold text-stone-900 group-hover:text-sky-600 transition-colors">
+                    {{ .Title }}
+                </h2>
+                <time class="date-badge shrink-0" datetime="{{ .Date.Format "2006-01-02" }}">
+                    {{ .Date.Format "Jan 2, 2006" }}
+                </time>
+            </div>
+            {{ with .Summary }}
+            <p class="job-desc line-clamp-2">{{ . }}</p>
+            {{ end }}
+            {{ with .Params.tags }}
+            <div class="job-tags">
+                {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+            </div>
+            {{ end }}
+        </a>
+        {{ end }}
+    </div>
+
+    {{ template "_internal/pagination.html" . }}
+    {{ end }}
+
+</section>
+{{ end }}

@@ -1,0 +1,8 @@
+name        = "vk"
+license     = "MIT"
+description = "A clean blog theme based on the krivokuca.dev design system."
+min_version = "0.110.0"
+
+[author]
+  name     = "Vedran Krivokuca"
+  homepage = "https://krivokuca.dev"

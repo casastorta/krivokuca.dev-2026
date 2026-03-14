@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+        <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why Rust Is Hard (And Why That&#39;s the Point) · VK</title>
+<meta name="description" content="The borrow checker isn&#39;t your enemy. It&#39;s just very honest." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ["Inter", "ui-sans-serif", "system-ui"],
+                    mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+                },
+                colors: {
+                    stone: {
+                        50:  "#fafaf9",
+                        100: "#f5f5f4",
+                        200: "#e7e5e4",
+                        300: "#d6d3d1",
+                        400: "#a8a29e",
+                        500: "#78716c",
+                        600: "#57534e",
+                        700: "#44403c",
+                        800: "#292524",
+                        900: "#1c1917",
+                    },
+                },
+            },
+        },
+    };
+</script>
+<link rel="stylesheet" href="/blog/css/style.css" />
+
+    </head>
+    <body class="bg-stone-50 text-stone-900 antialiased min-h-screen flex flex-col">
+        <nav class="sticky top-0 z-50 glass border-b border-stone-100">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        
+        <a href="/" class="text-xl font-bold tracking-tight">
+            VK<span class="text-amber-400">.</span>
+        </a>
+
+        
+        <div class="hidden md:flex items-center gap-8">
+            
+            <a href="/blog/" class="nav-link">Home</a>
+            
+            <a href="/blog/blog/" class="nav-link">Blog</a>
+            
+            <a href="/blog/blog/posts/" class="nav-link">Posts</a>
+            
+            <a href="/blog/blog/tags/" class="nav-link">Tags</a>
+            
+        </div>
+
+        
+        <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 transition-colors" aria-label="Toggle menu">
+            <svg id="menu-open-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-close-icon" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
+    
+    <div id="mobile-menu" class="hidden md:hidden border-t border-stone-100 bg-stone-50/95 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+            
+            <a href="/blog/" class="nav-link py-1">Home</a>
+            
+            <a href="/blog/blog/" class="nav-link py-1">Blog</a>
+            
+            <a href="/blog/blog/posts/" class="nav-link py-1">Posts</a>
+            
+            <a href="/blog/blog/tags/" class="nav-link py-1">Tags</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+        <main class="flex-1">
+            
+<article class="max-w-6xl mx-auto px-6 py-20">
+
+    
+    <header class="mb-12">
+        
+        <div class="badge-group mb-4">
+            
+            <a href="/tags/rust" class="tag hover:bg-sky-50 hover:text-sky-700 transition-colors">rust</a>
+            
+            <a href="/tags/programming" class="tag hover:bg-sky-50 hover:text-sky-700 transition-colors">programming</a>
+            
+            <a href="/tags/learning" class="tag hover:bg-sky-50 hover:text-sky-700 transition-colors">learning</a>
+            
+        </div>
+        
+
+        <h1 class="text-3xl sm:text-4xl font-bold text-stone-900 mb-4 leading-tight">
+            Why Rust Is Hard (And Why That&#39;s the Point)
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-3 text-stone-500 text-sm">
+            <time datetime="2026-02-18">
+                February 18, 2026
+            </time>
+            
+            <span class="text-stone-300">·</span>
+            <span>2 min read</span>
+            
+            
+        </div>
+    </header>
+
+    
+    <div class="prose">
+        <p>The first time the Rust compiler rejected my code, I thought it was broken. The second time, I thought I was broken. By the hundredth time, I started to understand that the compiler was right all along — I just hadn&rsquo;t been thinking carefully enough about ownership.</p>
+<h2 id="the-borrow-checker-is-a-mirror">The borrow checker is a mirror</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>The central insight is this: every bug the borrow checker prevents is a bug that <em>would have shipped</em> in C, C++, or even Go. Memory safety violations, data races, use-after-free — Rust makes these impossible at compile time rather than painful at 3am.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> s1 <span style="color:#f92672">=</span> String::from(<span style="color:#e6db74">&#34;hello&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> s2 <span style="color:#f92672">=</span> s1; <span style="color:#75715e">// s1 is moved here
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// This won&#39;t compile — and that&#39;s the point
+</span></span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">println!</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, s1);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="learning-curve-or-learning-cliff">Learning curve or learning cliff?</h2>
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>The honest answer is: it depends on your background. If you&rsquo;ve spent years writing Python or JavaScript, the ownership model will feel alien. If you&rsquo;ve survived manual memory management in C, you&rsquo;ll recognise the problems Rust is solving — you&rsquo;ve just been solving them manually, with varying degrees of success.</p>
+<blockquote>
+<p>The compiler is not your enemy. It&rsquo;s the world&rsquo;s most patient code reviewer who never gets tired, never misses a case, and never lets things slide because it&rsquo;s Friday afternoon.</p>
+</blockquote>
+<h2 id="is-it-worth-it">Is it worth it?</h2>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+<p>For systems work, infrastructure tooling, anything where performance and correctness both matter — yes, unequivocally. For a quick weekend script? Probably not. Like most tools, the question isn&rsquo;t whether Rust is good, it&rsquo;s whether it&rsquo;s the right fit for what you&rsquo;re building.</p>
+<p>My progress bar sits at 21%. I&rsquo;ll get there.</p>
+
+    </div>
+
+    
+    <nav class="mt-16 pt-8 border-t border-stone-200 flex justify-between gap-4 text-sm">
+        
+        <a href="http://localhost:1313/blog/posts/kubernetes-is-not-a-deploy-button/" class="group flex items-center gap-2 text-stone-500 hover:text-sky-600 transition-colors max-w-xs">
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span class="line-clamp-1">Kubernetes Is Not a Deploy Button</span>
+        </a>
+        
+        
+        <a href="http://localhost:1313/blog/posts/on-finishing-things/" class="group flex items-center gap-2 text-stone-500 hover:text-sky-600 transition-colors max-w-xs text-right">
+            <span class="line-clamp-1">On Finishing Things</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+        </a>
+        
+    </nav>
+
+</article>
+
+        </main>
+
+        <footer class="bg-stone-900 text-stone-400 mt-auto">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-6">
+            <div>
+                <p class="text-white font-bold text-lg">
+                    VK<span class="text-amber-400">.</span>
+                </p>
+                
+                <p class="text-stone-500 text-sm mt-1">Building the web, one commit at a time.</p>
+                
+            </div>
+            <div class="flex items-center gap-4">
+                
+                <a href="https://github.com/casastorta" target="_blank" rel="noopener" aria-label="GitHub" class="footer-link">
+                    <span class="icon icon-github w-4 h-4"></span>
+                </a>
+                
+                
+                <a href="https://linkedin.com/in/casastorta" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-link">
+                    <span class="icon icon-linkedin w-4 h-4"></span>
+                </a>
+                
+                
+                <a href="https://mastodon.online/@casastorta" target="_blank" rel="noopener" aria-label="Mastodon" class="footer-link">
+                    <span class="icon icon-mastodon w-4 h-4"></span>
+                </a>
+                
+                
+                <a href="mailto:vedran@krivokuca.net" aria-label="Email" class="footer-link">
+                    <span class="icon icon-email w-4 h-4"></span>
+                </a>
+                
+            </div>
+        </div>
+        <div class="border-t border-stone-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p class="text-stone-500 text-sm">
+                &copy; 2026 Vedran Krivokuca. All rights reserved.
+            </p>
+            
+        </div>
+    </div>
+</footer>
+
+
+        <script src="/blog/js/main.js"></script>
+    </body>
+</html>
