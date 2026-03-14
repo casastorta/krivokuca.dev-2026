@@ -1,6 +1,19 @@
 html {
     font-family: "Inter", sans-serif;
 }
+
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-new(root) {
+    animation: zoom-in 0.25s ease;
+}
+
+@keyframes zoom-in {
+    from { transform: scale(0.97); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
 .gradient-text {
     background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
     -webkit-background-clip: text;
